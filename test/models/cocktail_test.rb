@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class CocktailTest < ActiveSupport::TestCase
-  should have_many(:recipe_items)
-  should have_many(:ingredients).through(:recipe_items)
-  should have_and_belong_to_many(:garnishes)
+  context "associations" do
+    should have_many(:recipe_items)
+    should have_many(:ingredients).through(:recipe_items)
+    should have_and_belong_to_many(:garnishes)
+  end
 
   context "with a blob description" do
     setup do
