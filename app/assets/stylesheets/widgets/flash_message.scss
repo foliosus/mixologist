@@ -1,0 +1,20 @@
+// ==============
+// Flash message
+// ==============
+
+#flash div {
+  border: 1px solid;
+  padding: $base_line_height 1em;
+  margin-bottom: $base_line_height;
+
+  &.info, &.notice {
+    color: #060; background-color: #efe;
+  }
+  &.warning {
+    color: #006; background-color: #eef;
+  }
+  &.error {
+    color: #600; background-color: #fee;
+  }
+}
+

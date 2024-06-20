@@ -1,0 +1,39 @@
+#sitewide_navigation {
+  margin-top: $base_line_height * 0.5;
+  margin-bottom: $base_line_height * 0.5;
+
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    list-style-type: none;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+
+    li {
+      flex: 0 0 auto;
+    }
+
+    a {
+      display: block;
+      padding: $base_line_height * 0.5 2rem;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $link_color;
+        color: #fff;
+      }
+    }
+
+    .current a {
+      color: $body_text_color;
+      cursor: default;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+}

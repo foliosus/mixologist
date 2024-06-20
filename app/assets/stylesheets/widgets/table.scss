@@ -1,0 +1,44 @@
+// ===========
+// Data tables
+// ===========
+
+table {
+  width: 100%;
+
+  th, td {
+    padding: $base-line-height * 0.5 0.25em;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  thead {
+    tr {
+      background-color: $secondary_color;
+      color: #fff;
+      border-bottom: 1px solid $link_color;
+    }
+  }
+  tbody {
+    tr:nth-child(2n) {
+      background-color: $table_stripe_color;
+    }
+  }
+
+  td.actions {
+    white-space: nowrap;
+
+    a {
+      padding: 0 1em;
+
+      &.oi-medium:before {
+        padding: 0 0.25em;
+      }
+    }
+  }
+}

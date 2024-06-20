@@ -1,0 +1,43 @@
+// Modular scale defined here: http://modularscale.com/scale/?px1=18&px2=22&ra1=1.618&ra2=0
+// Critical values are 18px and 22px, using a golden ratio for scaling
+
+@function font_size($level: 0) {
+  @if $level == -2 {
+    @return 11px;
+  } @else if $level == -1 {
+    @return 14px;
+  } @else if $level == 0 {
+    @return $base-line-height;
+  } @else if $level == 1 {
+    @return 22px;
+  } @else if $level == 2 {
+    @return 29px;
+  } @else if $level == 3 {
+    @return 36px;
+  } @else if $level == 4 {
+    @return 47px;
+  }
+}
+
+@function font_lines($level: 0) {
+  @if $level == -2 {
+    @return 1;
+  } @else if $level == -1 {
+    @return 1;
+  } @else if $level == 0 {
+    @return 1;
+  } @else if $level == 1 {
+    @return 1;
+  } @else if $level == 2 {
+    @return 2;
+  } @else if $level == 3 {
+    @return 2;
+  } @else if $level == 4 {
+    @return 3;
+  }
+}
+
+@mixin set-font-size($level: 0) {
+  font-size: font_size($level);
+  line-height: font_lines($level);
+}

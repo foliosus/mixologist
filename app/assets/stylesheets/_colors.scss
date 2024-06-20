@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+
+$primary_color: #a42b3b;
+$secondary_color: #210b2c;
+$tertiary_color: #f8f3f9;
+
+$body_text_color: $secondary_color;
+$link_color: $primary_color;
+$hover_link_color: adjust-hue($link_color, 30);
+
+$table_stripe_color: $tertiary_color;

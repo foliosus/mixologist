@@ -1,0 +1,62 @@
+// ===================
+// Font family, colors
+// ===================
+
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  color: $body_text_color;
+}
+
+// ===============
+// Vertical rhythm
+// ===============
+
+// Note that the $base_font_size is defined in application.scss
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+  width: 100%;
+}
+
+h1 {
+  @include set_font_size(3);
+  margin-bottom: $base-line-height;
+}
+
+h2 {
+  @include set_font_size(2);
+}
+
+h3 {
+  @include set_font_size(1);
+}
+
+h4 {
+  @include set_font_size(0);
+}
+
+table, p, ul, ol, pre, blockquote {
+  margin-bottom: $base-line-height;
+}
+
+
+// ===========
+// Link styles
+// ===========
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+
+  &:link, &:visited {
+    color: $link_color;
+  }
+
+  &:hover {
+    color: $hover_link_color;
+  }
+
+  &.call_to_action {
+    text-decoration: none;
+  }
+}

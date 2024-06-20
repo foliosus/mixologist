@@ -1,0 +1,31 @@
+- page_title "Cocktail recipes (#{@cocktails.length} #{@search.terms.present? ? 'found' : 'total'})"
+
+- if @cocktails.blank?
+  - if @search.terms.present?
+    %p No results found. Maybe try expanding your search a bit?
+  - else
+    %p There's nothing to show. Try creating a cocktail!
+- else
+  - if @search.terms.present?
+    %p Searching for #{@search.term_string}
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Ingredients
+        %th
+    %tbody
+    - @cocktails.each do |cocktail|
+      %tr
+        %td= link_to cocktail.name, cocktail
+        %td= cocktail.recipe_items.sort.collect(&:ingredient).collect(&:name).join(', ')
+        %td.actions
+          = link_to Icon.new(:trash), cocktail, data: {confirm: 'Are you sure?', method: :delete}, :'aria-hidden' => true
+
+- content_for :secondary_content do
+  %p= new_cocktail_link
+
+  - if @search
+    = semantic_form_for(@search, url: url_for(), method: :get) do |f|
+      = f.inputs do
+        = f.input :term_string, placeholder: 'Comma-separated names', label: 'Ingredient search', as: 'search'

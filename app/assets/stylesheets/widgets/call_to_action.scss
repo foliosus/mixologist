@@ -1,0 +1,25 @@
+$button_gutter_width: 1rem;
+
+a.call_to_action {
+  display: block;
+  padding: $base_line_height * 0.5 $button_gutter_width;
+
+  @include set_font_size(1);
+  background-color: $link_color;
+  color: #fff;
+  font-weight: bold;
+
+  &.oi:not(.oi-text-replace) {
+    padding-left: 2.5 * $button_gutter_width;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      top: $base_line_height * 0.5;
+      bottom: $base_line_height * 0.5;
+      left: $button_gutter_width;
+      width: $button_gutter_width;
+      display: block;
+    }
+  }
+}

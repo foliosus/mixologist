@@ -1,0 +1,24 @@
+- page_title @cocktail.name
+
+- if @scale
+  %h4 Recipe is scaled #{@scale}x
+
+%ul
+  - @cocktail.recipe_items.sort.each do |item|
+    %li= html_fractions(item.summary)
+
+%p= @cocktail.full_technique.capitalize + '.'
+
+- if @cocktail.notes.present?
+  = simple_format(auto_link(@cocktail.notes))
+
+= link_to 'Edit', edit_cocktail_path(@cocktail)
+
+- content_for :secondary_content do
+  - if flash[:show_new_cocktail_button]
+    %p= new_cocktail_link
+
+  %h2 Scale this recipe
+  = semantic_form_for :scaler do |f|
+    = f.inputs do
+      = f.input :scale, label: 'Scaling factor'

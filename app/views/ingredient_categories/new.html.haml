@@ -1,0 +1,6 @@
+- page_title 'New ingredient category'
+
+= semantic_form_for(@ingredient_category) do |f|
+  = render 'form', f: f
+  = f.actions do
+    = f.action :submit, label: 'Create a new category'

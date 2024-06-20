@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title= [@page_title, "Bartender's Guide"].compact.join(' .:|:. ')
+
+    = stylesheet_link_tag 'application'
+
+    = javascript_importmap_tags
+    %script{src: "https://kit.fontawesome.com/00c2ee0335.js", crossorigin: "anonymous"}
+
+    = csrf_meta_tag
+    = csp_meta_tag
+
+  %body
+    #wrapper
+      %nav#sitewide_navigation
+        = render partial: 'layouts/navigation'
+      #primary_content
+        = content_tag :h1, @page_title if @page_title
+        = raw show_flash
+        = yield
+      #secondary_content
+        = yield :secondary_content
