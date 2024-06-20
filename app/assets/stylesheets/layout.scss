@@ -29,6 +29,7 @@ body {
 
   #secondary_content {
     grid-area: secondary_content;
+    margin-top: $base_line_height * 0.75;
   }
 }
 
