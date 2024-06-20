@@ -12,7 +12,7 @@ class UnitsControllerTest < ActionController::TestCase
     should "get index" do
       get :index
       assert_response :success
-      assert_not_nil assigns(:units)
+      assert_select "table tbody tr", {count: 1}, "Should have one row per unit"
     end
 
     should "get new" do
@@ -21,12 +21,11 @@ class UnitsControllerTest < ActionController::TestCase
     end
 
     should "create unit" do
-      assert_difference('Unit.count') do
+      assert_difference('Unit.count', 1) do
         post :create, params: { unit: attributes_for(:unit) }
       end
 
       assert_redirected_to units_path
-      assigns(:unit).destroy
     end
 
     should "get edit" do

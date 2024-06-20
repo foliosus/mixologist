@@ -4,20 +4,32 @@ ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
 require "minitest/rails"
+require "minitest/reporters"
 require "database_cleaner/active_record"
+
+# ==================
+# Test class patches
+# ==================
 
 module ActiveSupport
   class TestCase
+    include FactoryBot::Syntax::Methods
+
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)
-
-    # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-    fixtures :all
-
-    # Add more helper methods to be used by all tests here...
-    # include FactoryGirl::Syntax::Methods
   end
 end
+
+class ActionController::TestCase
+  include FactoryBot::Syntax::Methods
+end
+
+
+# ======================
+# Minitest configuration
+# ======================
+
+Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new
 
 # ========================
 # Database cleaner configs
@@ -34,6 +46,7 @@ class Minitest::Spec
     DatabaseCleaner.clean
   end
 end
+
 
 # ===============
 # Shoulda configs

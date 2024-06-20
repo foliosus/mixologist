@@ -1,12 +1,15 @@
 require 'test_helper'
 
 class IngredientTest < ActiveSupport::TestCase
-  should have_many(:recipe_items)
-  should belong_to(:ingredient_category)
+  context "associations" do
+    should have_many(:recipe_items)
+    should belong_to(:ingredient_category)
+  end
 
-  should validate_length_of(:name).is_at_least(1).is_at_most(40)
-
-  should validate_uniqueness_of(:name)
+  context "validations" do
+    should validate_length_of(:name).is_at_least(1).is_at_most(40)
+    should validate_uniqueness_of(:name)
+  end
 
   context "an ingredient" do
     setup do

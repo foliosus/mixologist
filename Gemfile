@@ -68,9 +68,8 @@ group :test do
   # gem "selenium-webdriver"
 
   gem "minitest-rails"
+  gem "minitest-reporters"
   gem "test-unit"
   gem "shoulda"
-  # gem "shoulda-context"
-  # gem "shoulda-matchers"
   gem "database_cleaner-active_record"
 end

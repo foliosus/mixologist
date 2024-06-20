@@ -18,6 +18,7 @@ FactoryBot.define do
 
   factory :ingredient do
     sequence(:name) {|n| "creme de foo#{n}"}
+    ingredient_category { IngredientCategory.first || build(:ingredient_category) }
   end
 
   factory :ingredient_category do

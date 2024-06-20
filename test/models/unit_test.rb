@@ -1,12 +1,15 @@
 require 'test_helper'
 
 class UnitTest < ActiveSupport::TestCase
-  should have_many(:recipe_items)
+  context "associations" do
+    should have_many(:recipe_items)
+  end
 
-  should validate_length_of(:name).is_at_least(1).is_at_most(40)
-  should validate_length_of(:abbreviation).is_at_least(1).is_at_most(4)
-
-  should validate_numericality_of(:size_in_ounces).is_greater_than(0).allow_nil
+  context "validations" do
+    should validate_length_of(:name).is_at_least(1).is_at_most(40)
+    should validate_length_of(:abbreviation).is_at_least(1).is_at_most(4)
+    should validate_numericality_of(:size_in_ounces).is_greater_than(0).allow_nil
+  end
 
   context "a saved unit" do
     setup do

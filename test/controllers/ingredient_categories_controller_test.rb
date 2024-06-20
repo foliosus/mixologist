@@ -12,7 +12,7 @@ class IngredientCategoriesControllerTest < ActionController::TestCase
     should "get index" do
       get :index
       assert_response :success
-      assert_not_nil assigns(:ingredient_categories)
+      assert_select "table tbody tr", {count: 1}, "Should have one row per ingredient category"
     end
 
     should "get new" do

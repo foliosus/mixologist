@@ -12,7 +12,7 @@ class IngredientsControllerTest < ActionController::TestCase
     should "get index" do
       get :index
       assert_response :success
-      assert_not_nil assigns(:ingredients)
+      assert_select "table tbody tr", {count: 1}, "Should have one row per ingredient"
     end
 
     should "get new" do
@@ -26,7 +26,6 @@ class IngredientsControllerTest < ActionController::TestCase
       end
 
       assert_redirected_to ingredients_path
-      assigns(:ingredient).destroy
     end
 
     should "get edit" do

@@ -15,8 +15,7 @@ class CocktailsControllerTest < ActionController::TestCase
       post :create, params: { cocktail: @cocktail.attributes }
     end
 
-    assert_redirected_to cocktail_path(assigns(:cocktail))
-    assigns(:cocktail).destroy
+    assert_redirected_to cocktail_path(Cocktail.last)
   end
 
   context "with an existing cocktail" do
@@ -30,7 +29,7 @@ class CocktailsControllerTest < ActionController::TestCase
     should "get index" do
       get :index
       assert_response :success
-      assert_not_nil assigns(:cocktails)
+      assert_select "table tbody tr", {count: 1}, "Should have one row per cocktail"
     end
 
     should "show cocktail" do
