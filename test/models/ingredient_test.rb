@@ -7,6 +7,10 @@ class IngredientTest < ActiveSupport::TestCase
   end
 
   context "validations" do
+    subject do
+      build(:ingredient)
+    end
+
     should validate_length_of(:name).is_at_least(1).is_at_most(40)
     should validate_uniqueness_of(:name)
   end

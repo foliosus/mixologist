@@ -6,9 +6,13 @@ class UnitTest < ActiveSupport::TestCase
   end
 
   context "validations" do
+    subject do
+      build(:unit)
+    end
+
     should validate_length_of(:name).is_at_least(1).is_at_most(40)
     should validate_length_of(:abbreviation).is_at_least(1).is_at_most(4)
-    should validate_numericality_of(:size_in_ounces).is_greater_than(0).allow_nil
+    should validate_numericality_of(:size_in_ounces).is_greater_than(0)
   end
 
   context "a saved unit" do

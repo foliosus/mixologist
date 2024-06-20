@@ -31,6 +31,7 @@ end
 
 Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new
 
+
 # ========================
 # Database cleaner configs
 # ========================
@@ -56,5 +57,13 @@ Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :minitest
     with.library :rails
+  end
+end
+
+# Shoulda matchers' methods like validates_numericality_of calls the old errors.keys syntax, which was deprecated in
+# favor of errors.attribute_names. This sets up an alias so that the matchers work.
+class ActiveModel::Errors
+  def keys
+    attribute_names
   end
 end

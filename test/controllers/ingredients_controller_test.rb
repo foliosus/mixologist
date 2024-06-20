@@ -21,8 +21,10 @@ class IngredientsControllerTest < ActionController::TestCase
     end
 
     should "create ingredient" do
+      attribs = attributes_for(:ingredient)
+      attribs[:ingredient_category_id] = attribs.delete(:ingredient_category).id
       assert_difference('Ingredient.count') do
-        post :create, params: { ingredient: attributes_for(:ingredient) }
+        post :create, params: { ingredient: attribs }
       end
 
       assert_redirected_to ingredients_path
