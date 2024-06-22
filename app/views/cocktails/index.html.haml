@@ -8,18 +8,13 @@
 - else
   - if @search.terms.present?
     %p Searching for #{@search.term_string}
-  %table
-    %thead
-      %tr
-        %th Name
-        %th Ingredients
-        %th
-    %tbody
+
+  .cocktails
     - @cocktails.each do |cocktail|
-      %tr
-        %td= link_to cocktail.name, cocktail
-        %td= cocktail.recipe_items.sort.collect(&:ingredient).collect(&:name).join(', ')
-        %td.actions
+      %cocktail
+        %h2= link_to cocktail.name, cocktail
+        %p.ingredients= cocktail.recipe_items.sort.collect(&:ingredient).collect(&:name).join(', ')
+        %p.actions
           = link_to Icon.new(:trash), cocktail, data: {confirm: 'Are you sure?', method: :delete}, :'aria-hidden' => true
 
 - content_for :secondary_content do

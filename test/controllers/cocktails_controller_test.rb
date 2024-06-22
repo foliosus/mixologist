@@ -29,7 +29,7 @@ class CocktailsControllerTest < ActionController::TestCase
     should "get index" do
       get :index
       assert_response :success
-      assert_select "table tbody tr", {count: 1}, "Should have one row per cocktail"
+      assert_select ".cocktails cocktail", {count: 1}, "Should have one card per cocktail"
     end
 
     should "show cocktail" do

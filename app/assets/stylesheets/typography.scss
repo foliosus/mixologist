@@ -46,7 +46,8 @@ table, p, ul, ol, pre, blockquote {
 
 a {
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: 2px;
 
   &:link, &:visited {
     color: $link_color;
