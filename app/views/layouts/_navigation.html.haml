@@ -1,5 +1,7 @@
 %ul
-  - [:cocktails, :garnishes, :ingredients, :ingredient_categories, :units].each do |thing|
+  %li{class: current_page?(root_path) ? 'current' : nil}
+    = link_to "Cocktails", root_path
+  - [:garnishes, :ingredients, :ingredient_categories, :units].each do |thing|
     - path = send("#{thing}_path")
     %li{class: current_page?(path) ? 'current' : nil}
       = link_to thing.to_s.humanize, path
