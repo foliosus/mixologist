@@ -1,16 +1,19 @@
-- page_title @cocktail.name
+%div{itemtype: "https://schema.org/Recipe", itemscope: true}
 
-- if @scale
-  %h4 Recipe is scaled #{@scale}x
+  %h1{itemprop: "name"}= @cocktail.name
+  %meta{itemprop: "datePublished", content: @cocktail.created_at}
 
-%ul
-  - @cocktail.recipe_items.sort.each do |item|
-    %li= html_fractions(item.summary)
+  - if @scale
+    %h4 Recipe is scaled #{@scale}x
 
-%p= @cocktail.full_technique.capitalize + '.'
+  %ul
+    - @cocktail.recipe_items.sort.each do |item|
+      %li{itemprop: "recipeIngredient"}= html_fractions(item.summary)
 
-- if @cocktail.notes.present?
-  = simple_format(auto_link(@cocktail.notes))
+  %p{itemprop: "recipeInstructions"}= @cocktail.full_technique.capitalize + '.'
+
+  - if @cocktail.notes.present?
+    %div{itemprop: "description"}= simple_format(auto_link(@cocktail.notes))
 
 = link_to 'Edit', edit_cocktail_path(@cocktail)
 
