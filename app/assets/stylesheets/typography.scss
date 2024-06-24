@@ -3,8 +3,11 @@
 // ===================
 
 body {
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Alice', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   color: $body_text_color;
+  @include set_font_size(0);
 }
 
 // ===============
@@ -14,8 +17,10 @@ body {
 // Note that the $base_font_size is defined in application.scss
 
 h1, h2, h3, h4 {
-  font-weight: bold;
   width: 100%;
+  font-family: "Limelight", "Helvetica", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1 {
@@ -55,9 +60,5 @@ a {
 
   &:hover {
     color: $hover_link_color;
-  }
-
-  &.call_to_action {
-    text-decoration: none;
   }
 }

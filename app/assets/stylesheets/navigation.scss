@@ -2,6 +2,15 @@
   margin-top: $base_line_height * 0.5;
   margin-bottom: $base_line_height * 0.5;
 
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 1rem;
+
+  nav {
+    padding-top: $base_line_height * 2;
+  }
+
   ul {
     display: flex;
     flex-flow: row wrap;

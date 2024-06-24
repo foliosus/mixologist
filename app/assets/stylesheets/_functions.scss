@@ -7,7 +7,7 @@
   } @else if $level == -1 {
     @return 14px;
   } @else if $level == 0 {
-    @return $base-line-height;
+    @return $base-font-size;
   } @else if $level == 1 {
     @return 22px;
   } @else if $level == 2 {
@@ -21,19 +21,19 @@
 
 @function font_lines($level: 0) {
   @if $level == -2 {
-    @return 1;
+    @return 1 * $base-line-height;
   } @else if $level == -1 {
-    @return 1;
+    @return 1 * $base-line-height;
   } @else if $level == 0 {
-    @return 1;
+    @return 1 * $base-line-height;
   } @else if $level == 1 {
-    @return 1;
+    @return 1 * $base-line-height;
   } @else if $level == 2 {
-    @return 2;
+    @return 2 * $base-line-height;
   } @else if $level == 3 {
-    @return 2;
+    @return 2 * $base-line-height;
   } @else if $level == 4 {
-    @return 3;
+    @return 3 * $base-line-height;
   }
 }
 

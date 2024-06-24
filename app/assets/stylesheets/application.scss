@@ -8,8 +8,8 @@
 // Establish typographical system
 // ==============================
 
-$base-font-size: 18px;
-$base-line-height: 22px;
+$base-font-size: 16px;
+$base-line-height: 20px;
 
 @import 'typography';
 
@@ -19,7 +19,6 @@ $base-line-height: 22px;
 // ====================
 
 @import 'formtastic';
-@import 'formtastic_changes';
 @import 'formtastic_customizations';
 
 

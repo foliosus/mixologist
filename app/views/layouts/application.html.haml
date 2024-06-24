@@ -5,6 +5,10 @@
 
     = stylesheet_link_tag 'application'
 
+    %link{rel: "preconnect", href: "https://fonts.googleapis.com"}
+    %link{rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: true}
+    %link{rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Alice&family=Limelight&display=swap"}
+
     = javascript_importmap_tags
     %script{src: "https://kit.fontawesome.com/00c2ee0335.js", crossorigin: "anonymous"}
 
@@ -13,8 +17,11 @@
 
   %body
     #wrapper
-      %nav#sitewide_navigation
-        = render partial: 'layouts/navigation'
+      #sitewide_navigation
+        = link_to root_path do
+          = image_tag("logo.jpg")
+        %nav
+          = render partial: 'layouts/navigation'
       #primary_content
         = content_tag :h1, @page_title if @page_title
         = raw show_flash
