@@ -11,10 +11,6 @@ class Admin::IngredientsController < ApplicationController
 
     if @ingredients.blank?
       redirect_to new_admin_ingredient_path, notice: 'No ingredients were found. Create the first one now!'
-    else
-      respond_to do |format|
-        format.html # index.html.erb
-      end
     end
   end
 
@@ -23,10 +19,6 @@ class Admin::IngredientsController < ApplicationController
   def new
     preload_validation_data
     @ingredient = Ingredient.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
   # GET /ingredients/1/edit
@@ -40,13 +32,11 @@ class Admin::IngredientsController < ApplicationController
   def create
     @ingredient = Ingredient.new(ingredient_params)
 
-    respond_to do |format|
-      if @ingredient.save
-        format.html { redirect_to(admin_ingredients_path, notice: "#{@ingredient.name} has been added to the pantry") }
-      else
-        preload_validation_data
-        format.html { render action: "new" }
-      end
+    if @ingredient.save
+      redirect_to admin_ingredients_path, notice: "#{@ingredient.name} has been added to the pantry"
+    else
+      preload_validation_data
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -55,12 +45,10 @@ class Admin::IngredientsController < ApplicationController
   def update
     @ingredient = Ingredient.find(params[:id])
 
-    respond_to do |format|
-      if @ingredient.update(ingredient_params)
-        format.html { redirect_to(admin_ingredients_path, notice: 'Ingredient was successfully updated.') }
-      else
-        format.html { render action: "edit" }
-      end
+    if @ingredient.update(ingredient_params)
+      redirect_to admin_ingredients_path, notice: 'Ingredient was successfully updated'
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -70,9 +58,7 @@ class Admin::IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(admin_ingredients_url) }
-    end
+    redirect_to(admin_ingredients_url, notice: "#{@ingredient.name} has been deleted")
   end
 
   private def ingredient_params

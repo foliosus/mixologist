@@ -1,6 +1,4 @@
 class Admin::GarnishesController < ApplicationController
-  before_action :set_garnish, only: [:edit, :update, :destroy]
-
   # GET /garnishes
   def index
     @garnishes = Garnish.all
@@ -13,6 +11,7 @@ class Admin::GarnishesController < ApplicationController
 
   # GET /garnishes/1/edit
   def edit
+    @garnish = Garnish.find(params[:id])
   end
 
   # POST /garnishes
@@ -22,33 +21,29 @@ class Admin::GarnishesController < ApplicationController
     if @garnish.save
       redirect_to admin_garnishes_path, notice: 'Garnish was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /garnishes/1
   def update
+    @garnish = Garnish.find(params[:id])
     if @garnish.update(garnish_params)
       redirect_to admin_garnishes_path, notice: 'Garnish was successfully updated.'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
   # DELETE /garnishes/1
   def destroy
+    @garnish = Garnish.find(params[:id])
     @garnish.destroy
     redirect_to admin_garnishes_path, notice: 'Garnish was successfully destroyed.'
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_garnish
-      @garnish = Garnish.find(params[:id])
-    end
-
-    # Only allow a trusted parameter "white list" through.
-    def garnish_params
-      params.require(:garnish).permit(:name)
-    end
+  # Only allow a trusted parameter "white list" through.
+  private def garnish_params
+    params.require(:garnish).permit(:name)
+  end
 end

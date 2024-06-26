@@ -6,10 +6,6 @@ class Admin::UnitsController < ApplicationController
 
     if @units.blank?
       redirect_to new_admin_unit_path, notice: 'No measuring units were found. Create the first one now!'
-    else
-      respond_to do |format|
-        format.html # index.html.erb
-      end
     end
   end
 
@@ -17,10 +13,6 @@ class Admin::UnitsController < ApplicationController
   # GET /units/new.xml
   def new
     @unit = Unit.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
   # GET /units/1/edit
@@ -33,12 +25,10 @@ class Admin::UnitsController < ApplicationController
   def create
     @unit = Unit.new(unit_params)
 
-    respond_to do |format|
-      if @unit.save
-        format.html { redirect_to(admin_units_path, notice: 'Unit was successfully created.') }
-      else
-        format.html { render action: "new" }
-      end
+    if @unit.save
+      redirect_to admin_units_path, notice: 'Unit was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -47,12 +37,10 @@ class Admin::UnitsController < ApplicationController
   def update
     @unit = Unit.find(params[:id])
 
-    respond_to do |format|
-      if @unit.update(unit_params)
-        format.html { redirect_to(admin_units_path, notice: 'Unit was successfully updated.') }
-      else
-        format.html { render action: "edit" }
-      end
+    if @unit.update(unit_params)
+      redirect_to(admin_units_path, notice: 'Unit was successfully updated.')
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -62,9 +50,7 @@ class Admin::UnitsController < ApplicationController
     @unit = Unit.find(params[:id])
     @unit.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(admin_units_url) }
-    end
+    redirect_to(admin_units_url)
   end
 
   private

@@ -15,9 +15,7 @@ class Admin::CocktailsController < ApplicationController
       @cocktails = @cocktails.merge(@search.scope)
     end
 
-    respond_to do |format|
-      format.html { render "cocktails/index" }
-    end
+    render "cocktails/index"
   end
 
   # GET /cocktails/1
@@ -25,19 +23,13 @@ class Admin::CocktailsController < ApplicationController
   def show
     @cocktail = Cocktail.full_recipe.find(params[:id])
 
-    respond_to do |format|
-      format.html { render "cocktails/show" }
-    end
+    render "cocktails/show"
   end
 
   # GET /cocktails/new
   # GET /cocktails/new.xml
   def new
     @cocktail = Cocktail.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
   # GET /cocktails/1/edit
@@ -50,13 +42,11 @@ class Admin::CocktailsController < ApplicationController
   def create
     @cocktail = Cocktail.new(cocktail_params)
 
-    respond_to do |format|
-      if @cocktail.save
-        format.html { redirect_to(admin_cocktail_path(@cocktail), notice: "#{@cocktail.name} is now in the recipe book") }
-      else
-        preload_validation_data
-        format.html { render action: "new" }
-      end
+    if @cocktail.save
+      redirect_to admin_cocktail_path(@cocktail), notice: "#{@cocktail.name} is now in the recipe book"
+    else
+      preload_validation_data
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -65,12 +55,10 @@ class Admin::CocktailsController < ApplicationController
   def update
     @cocktail = Cocktail.find(params[:id])
 
-    respond_to do |format|
-      if @cocktail.update(cocktail_params)
-        format.html { redirect_to(admin_cocktail_path(@cocktail), notice: 'Cocktail was successfully updated.') }
-      else
-        format.html { render action: "edit" }
-      end
+    if @cocktail.update(cocktail_params)
+      redirect_to admin_cocktail_path(@cocktail), notice: 'Cocktail was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -80,9 +68,7 @@ class Admin::CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
     @cocktail.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(admin_cocktails_url) }
-    end
+    redirect_to(admin_cocktails_url)
   end
 
   private def preload_validation_data
