@@ -1,0 +1,17 @@
+- page_title 'Ingredient Categories'
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+  %tbody
+    - @ingredient_categories.each do |ingredient_category|
+      %tr
+        %td= ingredient_category.name
+        %td.actions
+          = link_to Icon.new(:edit), edit_admin_ingredient_category_path(ingredient_category)
+          = link_to Icon.new(:trash), admin_ingredient_category_path(ingredient_category), data: {turbo_confirm: 'Are you sure?', turbo_method: :delete}, :'aria-hidden' => true
+
+- content_for :secondary_content do
+  %p= link_to "#{Icon.new(:add)} Add a category".html_safe, new_admin_ingredient_category_path, class: 'call_to_action'

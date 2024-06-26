@@ -1,0 +1,12 @@
+- page_title "Edit #{@garnish.name}"
+
+= simple_form_for(@garnish, url: admin_garnish_path(@garnish)) do |f|
+  = render 'form', f: f
+  = f.submit 'Save your changes'
+
+- if @cocktails.present?
+  - content_for :secondary_content do
+    %h3 Cocktails with #{@garnish.name}
+    %ul
+      - @cocktails.each do |cocktail|
+        %li= link_to cocktail.name, cocktail

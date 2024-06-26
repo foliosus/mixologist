@@ -1,0 +1,5 @@
+- page_title 'New ingredient category'
+
+= simple_form_for(@ingredient_category, url: admin_ingredient_categories_path) do |f|
+  = render 'form', f: f
+  = f.submit 'Create a new category'

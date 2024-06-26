@@ -24,6 +24,11 @@ class ActionController::TestCase
   include FactoryBot::Syntax::Methods
 end
 
+class ActionDispatch::IntegrationTest
+  include FactoryBot::Syntax::Methods
+  include ReviseAuth::Test::Helpers
+end
+
 
 # ======================
 # Minitest configuration

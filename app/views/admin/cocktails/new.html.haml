@@ -1,0 +1,5 @@
+- page_title 'New cocktail'
+
+= simple_form_for(@cocktail) do |f|
+  = render 'form', {f: f}
+  = f.submit 'Make the drink'

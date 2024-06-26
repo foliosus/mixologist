@@ -14,13 +14,15 @@
       %cocktail
         %h2= link_to cocktail.name, cocktail
         %p.ingredients= cocktail.recipe_items.sort.collect(&:ingredient).collect(&:name).join(', ')
-        %p.actions
-          = link_to Icon.new(:trash), cocktail, data: {confirm: 'Are you sure?', method: :delete}, :'aria-hidden' => true
+        - if user_signed_in?
+          %p.actions
+            = link_to Icon.new(:edit), edit_admin_cocktail_path(cocktail)
+            = link_to Icon.new(:trash), admin_cocktail_path(cocktail), data: {turbo_confirm: 'Are you sure?', turbo_method: :delete}, :'aria-hidden' => true
 
 - content_for :secondary_content do
-  %p= new_cocktail_link
+  - if user_signed_in?
+    %p= new_cocktail_link
 
   - if @search
-    = semantic_form_for(@search, url: url_for(), method: :get) do |f|
-      = f.inputs do
-        = f.input :term_string, placeholder: 'Comma-separated names', label: 'Ingredient search', as: 'search'
+    = simple_form_for(@search, url: url_for(), method: :get) do |f|
+      = f.input :term_string, placeholder: 'Comma-separated names', label: 'Ingredient search', as: 'search', wrapper_html: {class: "stacked"}

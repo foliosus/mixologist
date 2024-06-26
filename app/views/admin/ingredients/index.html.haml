@@ -1,0 +1,27 @@
+- if @ingredient_category.present?
+  - page_title "#{@ingredient_category.name} ingredients"
+  %p= link_to "Show all ingredients", admin_ingredients_path
+- else
+  - page_title "Ingredients"
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Category
+      %th Notes
+      %th
+  %tbody
+    - @ingredients.each do |ingredient|
+      %tr
+        %td= ingredient.name
+        %td
+          - if ingredient.ingredient_category.present?
+            = link_to ingredient.ingredient_category.name, admin_ingredients_path(ingredient_category: ingredient.ingredient_category)
+        %td= simple_format(auto_link(ingredient.notes))
+        %td.actions
+          = link_to Icon.new(:edit), edit_admin_ingredient_path(ingredient)
+          = link_to Icon.new(:trash), admin_ingredient_path(ingredient), data: {turbo_confirm: 'Are you sure?', turbo_method: :delete}, :'aria-hidden' => true
+
+- content_for :secondary_content do
+  %p= link_to "#{Icon.new(:add)} Add an ingredient".html_safe, new_admin_ingredient_path, class: 'call_to_action'

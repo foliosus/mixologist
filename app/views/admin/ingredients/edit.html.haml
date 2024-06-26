@@ -1,0 +1,12 @@
+- page_title "Edit #{@ingredient.name}"
+
+= simple_form_for(@ingredient, url: admin_ingredient_path(@ingredient)) do |f|
+  = render 'form', f: f
+  = f.submit 'Save your changes'
+
+- if @cocktails.present?
+  - content_for :secondary_content do
+    %h3 Cocktails with #{@ingredient.name}
+    %ul
+      - @cocktails.each do |cocktail|
+        %li= link_to cocktail.name, cocktail

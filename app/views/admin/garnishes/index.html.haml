@@ -1,0 +1,18 @@
+- page_title 'Garnishes'
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+
+  %tbody
+    - @garnishes.each do |garnish|
+      %tr
+        %td= garnish.name
+        %td.actions
+          = link_to Icon.new(:edit), edit_admin_garnish_path(garnish)
+          = link_to Icon.new(:trash), admin_garnish_path(garnish), data: {turbo_confirm: 'Are you sure?', turbo_method: :delete}, :'aria-hidden' => true
+
+- content_for :secondary_content do
+  %p= link_to "#{Icon.new(:add)} Add a garnish".html_safe, new_admin_garnish_path, class: "call_to_action"

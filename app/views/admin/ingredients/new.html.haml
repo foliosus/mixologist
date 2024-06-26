@@ -1,0 +1,5 @@
+- page_title 'New ingredient'
+
+= simple_form_for(@ingredient, url: admin_ingredients_path) do |f|
+  = render 'form', f: f
+  = f.submit 'Create a new ingredient'

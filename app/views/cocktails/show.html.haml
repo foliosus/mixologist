@@ -15,13 +15,14 @@
   - if @cocktail.notes.present?
     %div{itemprop: "description"}= simple_format(auto_link(@cocktail.notes))
 
-= link_to 'Edit', edit_cocktail_path(@cocktail)
+- if user_signed_in?
+  %p= link_to 'Edit', edit_admin_cocktail_path(@cocktail)
 
 - content_for :secondary_content do
-  - if flash[:show_new_cocktail_button]
+  - if user_signed_in?
     %p= new_cocktail_link
 
-  %h2 Scale this recipe
-  = semantic_form_for :scaler do |f|
-    = f.inputs do
-      = f.input :scale, label: 'Scaling factor'
+  = turbo_frame_tag "scaled_recipe" do
+    %h2 Scale this recipe
+    = simple_form_for :scaler do |f|
+      = f.input :scale, as: :integer, label: 'Scaling factor', wrapper_html: {class: "stacked"}, required: false

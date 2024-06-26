@@ -6,8 +6,10 @@ a.call_to_action {
   text-decoration: none;
   border-radius: 5px;
 
+  font-family: "Limelight", "Helvetica", sans-serif;
   @include set_font_size(1);
+  text-align: center;
+
   background-color: $link_color;
   color: #fff;
-  font-weight: bold;
 }

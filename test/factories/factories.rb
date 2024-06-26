@@ -1,4 +1,11 @@
 FactoryBot.define do
+  factory :user do
+    sequence(:email){|n| "user_#{n}@example.com"}
+    password { "passwordpassword" }
+    password_confirmation { password }
+    confirmed_at { Time.zone.now - 1.minute }
+  end
+
   factory :cocktail do
     transient do
       garnishes_count { 1 }

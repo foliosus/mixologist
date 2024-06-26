@@ -14,12 +14,11 @@ $base-line-height: 20px;
 @import 'typography';
 
 
-// ====================
-// Use formtastic forms
-// ====================
+// ===============
+// Use simple_form
+// ===============
 
-@import 'formtastic';
-@import 'formtastic_customizations';
+@import 'simple_form';
 
 
 // ==============

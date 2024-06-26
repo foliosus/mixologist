@@ -1,0 +1,19 @@
+- page_title 'Units of measurement'
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Size in ounces
+      %th
+  %tbody
+    - @units.each do |unit|
+      %tr
+        %td= unit.name
+        %td= html_fractions(unit_to_fraction(unit))
+        %td.actions
+          = link_to Icon.new(:edit), edit_admin_unit_path(unit)
+          = link_to Icon.new(:trash), admin_unit_path(unit), data: {turbo_confirm: 'Are you sure?', turbo_method: :delete}, :'aria-hidden' => true
+
+- content_for :secondary_content do
+  %p= link_to "#{Icon.new(:add)} Add a new unit".html_safe, new_admin_unit_path, class: 'call_to_action'

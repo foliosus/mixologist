@@ -1,7 +1,14 @@
 %ul
-  %li{class: current_page?(root_path) ? 'current' : nil}
-    = link_to "Cocktails", root_path
-  - [:garnishes, :ingredients, :ingredient_categories, :units].each do |thing|
-    - path = send("#{thing}_path")
-    %li{class: current_page?(path) ? 'current' : nil}
-      = link_to thing.to_s.humanize, path
+  - if user_signed_in?
+    %li{class: current_page?(admin_cocktails_path) ? 'current' : nil}
+      = link_to "Cocktails", admin_cocktails_path
+    - [:garnishes, :ingredients, :ingredient_categories, :units].each do |thing|
+      - path = send("admin_#{thing}_path")
+      %li{class: current_page?(path) ? 'current' : nil}
+        = link_to thing.to_s.humanize, path
+    %li= link_to "Log out", logout_path, data: {turbo_method: :delete}
+  - else
+    %li{class: current_page?(root_path) ? 'current' : nil}
+      = link_to "Cocktails", root_path
+    %li{class: current_page?(login_path) ? 'current' : nil}
+      = link_to "Log in", login_path

@@ -1,0 +1,15 @@
+%h1 Log in
+
+= form_with url: login_path, class: "simple_form" do |form|
+  %fieldset.inputs
+    .input
+      = form.label :email
+      = form.email_field :email, required: true, autofocus: true
+
+    .input
+      = form.label :password
+      = form.password_field :password, required: true
+
+    %div
+      = form.button "Log in"
+
