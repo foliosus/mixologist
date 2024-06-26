@@ -79,7 +79,7 @@ form.simple_form {
     }
   }
 
-  button, input.button {
+  button, input.button, input[type=submit] {
     color: #fff;
     background-color: $link_color;
     border: none;

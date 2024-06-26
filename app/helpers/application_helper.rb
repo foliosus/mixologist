@@ -11,16 +11,6 @@ module ApplicationHelper
     @page_title = title
   end
 
-  # Show all of the flash messages
-  def show_flash
-    output = ''.html_safe
-    flash.each do |level, message|
-      next unless level.in?([:notice, :info, :warning, :error])
-      output << content_tag(:div, h(message), class: level)
-    end
-    content_tag(:div, output, id: 'flash') unless output.empty?
-  end
-
   # Show the fractions with correct HTML markup
   def html_fractions(text)
     new_text = text.dup

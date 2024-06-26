@@ -1,8 +1,10 @@
 @charset 'UTF-8';
 
-$primary_color: #a42b3b;
-$secondary_color: #210b2c;
-$tertiary_color: #f8f3f9;
+$primary_color: #a42b3b; // Red "auburn"
+$secondary_color: #210b2c; // Dark purple
+$tertiary_color: #f8f3f9; // Pale pink "magnolia"
+$quaternary_color: #a2d729; // Yellow green
+$quinary_color: #3c91e6; // Light "tufts" blue
 
 $body_text_color: $secondary_color;
 $link_color: $primary_color;
@@ -11,3 +13,12 @@ $hover_link_color: adjust-hue($link_color, 30);
 $table_stripe_color: $tertiary_color;
 
 $hairline_color: #ddd;
+
+$flash_notice_color: $body_text_color;
+$flash_notice_background_color: $quaternary_color;
+
+$flash_info_color: $body_text_color;
+$flash_info_background_color: scale-color($quinary_color, $lightness: 50%);
+
+$flash_alert_color: $body_text_color;
+$flash_alert_background_color: scale-color($primary_color, $lightness: 70%);

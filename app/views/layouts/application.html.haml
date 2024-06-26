@@ -22,9 +22,11 @@
           = image_tag("logo.jpg")
         %nav
           = render partial: 'layouts/navigation'
+      #flash_messages
+        - flash.each do |level, message|
+          %div{class: level}= message
       #primary_content
         = content_tag :h1, @page_title if @page_title
-        = raw show_flash
         = yield
       #secondary_content
         = yield :secondary_content
