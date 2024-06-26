@@ -4,8 +4,7 @@ class IngredientCategoryTest < ActiveSupport::TestCase
   should have_many(:ingredients)
   should have_many(:cocktails).through(:ingredients)
 
-  should validate_length_of(:name).is_at_least(1).is_at_most(40)
-
+  should validate_presence_of(:name)
   should validate_uniqueness_of(:name)
 
   context "an ingredient category" do

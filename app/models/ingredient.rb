@@ -3,7 +3,7 @@ class Ingredient < ActiveRecord::Base
   has_many :cocktails, through: :recipe_items
   belongs_to :ingredient_category, inverse_of: :ingredients
 
-  validates_length_of :name, within: 1..40, allow_blank: false
+  validates_presence_of :name, :ingredient_category_id
   validates_uniqueness_of :name
 
   default_scope -> { order("LOWER(#{quoted_table_name}.name) ASC") }

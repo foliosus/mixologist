@@ -2,8 +2,7 @@ class IngredientCategory < ActiveRecord::Base
   has_many :ingredients, inverse_of: :ingredient_category
   has_many :cocktails, through: :ingredients
 
-  validates_length_of :name, within: 1..40, allow_blank: false
-  validates_uniqueness_of :name
+  validates :name, presence: true, uniqueness: true
 
   default_scope lambda{ order('LOWER(name) ASC') }
 
