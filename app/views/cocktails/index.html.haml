@@ -11,7 +11,7 @@
 
   .cocktails
     - @cocktails.each do |cocktail|
-      %cocktail
+      %cocktail{id: dom_id(cocktail)}
         %h2= link_to cocktail.name, cocktail
         %p.ingredients= cocktail.recipe_items.sort.collect(&:ingredient).collect(&:name).join(', ')
         - if user_signed_in?

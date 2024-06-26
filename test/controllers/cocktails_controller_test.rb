@@ -20,4 +20,27 @@ class CocktailsControllerTest < ActionDispatch::IntegrationTest
       assert_response :success
     end
   end
+
+  context "with multiple cocktails" do
+    setup do
+      @gin = create(:ingredient, name: "gin")
+      @bourbon = create(:ingredient, name: "bourbon")
+
+      @corpse_reviver = create(:cocktail, name: "Corpse Reviver #2")
+      create(:recipe_item, cocktail: @corpse_reviver, ingredient: @gin)
+
+      @old_fashioned = create(:cocktail, name: "Old Fashioned")
+      create(:recipe_item, cocktail: @old_fashioned, ingredient: @bourbon)
+    end
+
+    should "get index with an ingredient search" do
+      get cocktails_path(search_terms: {term_string: "gin"})
+      assert_response :success
+      assert_select "cocktail##{dom_id(@corpse_reviver)}", {count: 1}, "Should have the corpse_reviver"
+
+      get cocktails_path(search_terms: {term_string: "bourbon"})
+      assert_response :success
+      assert_select "cocktail##{dom_id(@old_fashioned)}", {count: 1}, "Should have the old_fashioned"
+    end
+  end
 end
