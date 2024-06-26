@@ -1,7 +1,13 @@
 class Cocktail < ActiveRecord::Base
+  ALLOWED_TECHNIQUES = ['shake', 'stir', 'special (see notes)']
+
   has_many :recipe_items, inverse_of: :cocktail, dependent: :delete_all
   has_many :ingredients, through: :recipe_items
   has_and_belongs_to_many :garnishes, inverse_of: :cocktails
+
+  validates_presence_of :name
+  validates_presence_of :recipe_items_blob
+  validates_inclusion_of :technique, in: ALLOWED_TECHNIQUES, allow_blank: false
 
   accepts_nested_attributes_for :recipe_items,
                                 reject_if: proc {|attribs| attribs.values.all?{|v| v.blank?} }
@@ -65,7 +71,12 @@ class Cocktail < ActiveRecord::Base
   end
 
   def recipe_items_blob=(new_blob)
-    self.recipe_items = RecipeItemProcessor.process(self, new_blob.strip.gsub("\r", '').split("\n"))
+    blob = (new_blob || "").strip.gsub("\r", '').split("\n")
+    self.recipe_items = RecipeItemProcessor.process(self, blob)
+  end
+
+  def self.techniques
+    ALLOWED_TECHNIQUES
   end
 
   def full_technique

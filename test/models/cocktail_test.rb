@@ -7,6 +7,16 @@ class CocktailTest < ActiveSupport::TestCase
     should have_and_belong_to_many(:garnishes)
   end
 
+  context "validations" do
+    subject do
+      build(:cocktail)
+    end
+
+    should validate_presence_of(:name)
+    should validate_presence_of(:recipe_items_blob)
+    should validate_inclusion_of(:technique).in_array(Cocktail.techniques)
+  end
+
   context "with a blob description" do
     setup do
       @unit = create(:unit, abbreviation: 'oz')
