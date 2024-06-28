@@ -19,7 +19,7 @@ class Admin::GarnishesController < ApplicationController
     @garnish = Garnish.new(garnish_params)
 
     if @garnish.save
-      redirect_to admin_garnishes_path, notice: 'Garnish was successfully created.'
+      redirect_to admin_garnishes_path, notice: 'Garnish was successfully created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class Admin::GarnishesController < ApplicationController
   def update
     @garnish = Garnish.find(params[:id])
     if @garnish.update(garnish_params)
-      redirect_to admin_garnishes_path, notice: 'Garnish was successfully updated.'
+      redirect_to admin_garnishes_path, notice: 'Garnish was successfully updated'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class Admin::GarnishesController < ApplicationController
   def destroy
     @garnish = Garnish.find(params[:id])
     @garnish.destroy
-    redirect_to admin_garnishes_path, notice: 'Garnish was successfully destroyed.'
+    redirect_to admin_garnishes_path, notice: "#{@garnish.name.capitalize} garnish was successfully destroyed"
   end
 
   # Only allow a trusted parameter "white list" through.

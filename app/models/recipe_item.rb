@@ -3,7 +3,7 @@ class RecipeItem < ActiveRecord::Base
   belongs_to :ingredient, inverse_of: :recipe_items
   belongs_to :unit, inverse_of: :recipe_items
 
-  default_scope lambda{ order('amount DESC') }
+  default_scope ->{ order('amount DESC') }
 
   # Sort by volume first, then base spirits, then alphabetically
   def <=>(other)

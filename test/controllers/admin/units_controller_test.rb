@@ -14,10 +14,6 @@ class Admin::UnitsControllerTest < ActionDispatch::IntegrationTest
       @user = create(:user)
       login(@user, password: @user.password)
     end
-    teardown do
-      @unit.destroy
-      @user.destroy
-    end
 
     should "get index" do
       get admin_units_path

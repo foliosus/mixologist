@@ -11,9 +11,6 @@ class IngredientCategoryTest < ActiveSupport::TestCase
     setup do
       @ingredient_category = create(:ingredient_category)
     end
-    teardown do
-      @ingredient_category.destroy
-    end
 
     should "be found by name" do
       assert_equal @ingredient_category, IngredientCategory.named(@ingredient_category.name).first

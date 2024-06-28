@@ -28,5 +28,6 @@
       #primary_content
         = content_tag :h1, @page_title if @page_title
         = yield
-      #secondary_content
-        = yield :secondary_content
+      - if content_for?(:secondary_content)
+        #secondary_content
+          = yield :secondary_content

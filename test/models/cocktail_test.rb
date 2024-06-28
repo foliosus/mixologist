@@ -23,9 +23,6 @@ class CocktailTest < ActiveSupport::TestCase
       @recipe_item_strings = ["1 oz brandy", "1 oz lemon juice"]
       @blob = @recipe_item_strings.join("\r\n")
     end
-    teardown do
-      @unit.destroy
-    end
 
     should "take a blob assignment to generate the RecipeItems" do
       cocktail = Cocktail.new

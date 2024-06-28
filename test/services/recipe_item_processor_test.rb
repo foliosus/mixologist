@@ -3,8 +3,9 @@ require 'test_helper'
 class RecipeItemProcessorTest < ActiveSupport::TestCase
   context "with a cocktail with two items" do
     setup do
-      @ingredient1 = create(:ingredient)
-      @ingredient2 = create(:ingredient)
+      @ingredient_category = create(:ingredient_category)
+      @ingredient1 = create(:ingredient, ingredient_category: @ingredient_category)
+      @ingredient2 = create(:ingredient, ingredient_category: @ingredient_category)
       @unit1 = create(:unit)
       @unit2 = create(:unit)
       @cocktail = build(:cocktail, recipe_items: [
@@ -13,10 +14,6 @@ class RecipeItemProcessorTest < ActiveSupport::TestCase
       ])
       @item_summary1 = @cocktail.recipe_items.first.summary
       @item_summary2 = @cocktail.recipe_items.second.summary
-    end
-
-    teardown do
-      [@ingredient1, @ingredient2, @unit1, @unit2].each(&:destroy)
     end
 
     should "delete an ingredient if it's missing from the update" do

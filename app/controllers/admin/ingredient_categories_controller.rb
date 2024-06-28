@@ -19,7 +19,7 @@ class Admin::IngredientCategoriesController < ApplicationController
     @ingredient_category = IngredientCategory.new(ingredient_category_params)
 
     if @ingredient_category.save
-      redirect_to admin_ingredient_categories_path, notice: 'Category was successfully created.'
+      redirect_to admin_ingredient_categories_path, notice: 'Category was successfully created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class Admin::IngredientCategoriesController < ApplicationController
   def update
     @ingredient_category = IngredientCategory.find(params[:id])
     if @ingredient_category.update(ingredient_category_params)
-      redirect_to admin_ingredient_categories_path, notice: "Category was successfully updated to #{@ingredient_category.name}."
+      redirect_to admin_ingredient_categories_path, notice: "Category was updated to #{@ingredient_category.name}."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class Admin::IngredientCategoriesController < ApplicationController
   def destroy
     @ingredient_category = IngredientCategory.find(params[:id])
     @ingredient_category.destroy
-    redirect_to admin_ingredient_categories_path, notice: 'Category was successfully destroyed.'
+    redirect_to admin_ingredient_categories_path, notice: "#{@ingredient_category.name} category has been deleted"
   end
 
   # Only allow a trusted parameter "white list" through.

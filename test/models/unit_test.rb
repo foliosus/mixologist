@@ -19,9 +19,6 @@ class UnitTest < ActiveSupport::TestCase
     setup do
       @unit = create(:unit)
     end
-    teardown do
-      @unit.destroy
-    end
 
     should "be found by name" do
       assert_equal @unit, Unit.named(@unit.name).first

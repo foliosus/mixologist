@@ -5,11 +5,7 @@ class RecipeItemParserTest < ActiveSupport::TestCase
     Unit.delete_all
     Ingredient.delete_all
     @unit = create(:unit, name: 'ounce', abbreviation: 'oz')
-    @ingredient = create(:ingredient, name: 'brandy')
-  end
-  teardown do
-    @unit.destroy
-    @ingredient.destroy
+    @ingredient = create(:ingredient, name: 'brandy', ingredient_category: create(:ingredient_category))
   end
 
   {'1/4' => 0.25, '0.25' => 0.25, '.25' => 0.25, '1' => 1, '1 1/2' => 1.5}.each do |amount_str, amount|

@@ -10,13 +10,11 @@ class Admin::CocktailsControllerTest < ActionDispatch::IntegrationTest
 
   context "when logged in with a cocktail" do
     setup do
-      @cocktail = create(:cocktail)
+      @base_spirit = create(:ingredient_category, :base_spirit)
+      @bourbon = create(:ingredient, name: "bourbon", ingredient_category: @base_spirit)
+      @cocktail = create(:cocktail, recipe_items: [build(:recipe_item, ingredient: @bourbon)])
       @user = create(:user)
       login(@user, password: @user.password)
-    end
-    teardown do
-      @cocktail.destroy
-      @user.destroy
     end
 
     should "get index" do
@@ -36,8 +34,16 @@ class Admin::CocktailsControllerTest < ActionDispatch::IntegrationTest
     end
 
     should "create cocktail" do
+      create(:unit, :ounce)
+      create(:ingredient, name: "sweet vermouth")
+      create(:ingredient, name: "dry vermouth")
+      cocktail_attributes = {
+        name: "New cocktail name",
+        recipe_items_blob: "2 oz bourbon\n1/4 oz sweet vermouth\n1/4 oz dry vermouth",
+        technique: "shake"
+      }
       assert_difference('Cocktail.count') do
-        post admin_cocktails_path, params: { cocktail: attributes_for(:cocktail) }
+        post admin_cocktails_path, params: { cocktail: cocktail_attributes }
       end
 
       assert_redirected_to admin_cocktail_path(Cocktail.last)

@@ -45,6 +45,7 @@ class Admin::CocktailsController < ApplicationController
     if @cocktail.save
       redirect_to admin_cocktail_path(@cocktail), notice: "#{@cocktail.name} is now in the recipe book"
     else
+      puts @cocktail.errors.inspect
       preload_validation_data
       render :new, status: :unprocessable_entity
     end
@@ -56,7 +57,7 @@ class Admin::CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
 
     if @cocktail.update(cocktail_params)
-      redirect_to admin_cocktail_path(@cocktail), notice: 'Cocktail was successfully updated.'
+      redirect_to admin_cocktail_path(@cocktail), notice: 'Cocktail was successfully updated'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -68,7 +69,7 @@ class Admin::CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
     @cocktail.destroy
 
-    redirect_to(admin_cocktails_url)
+    redirect_to admin_cocktails_url, notice: "#{@cocktail.name} has been removed from the recipe book"
   end
 
   private def preload_validation_data

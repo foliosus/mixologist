@@ -15,11 +15,6 @@ class Admin::GarnishesControllerTest < ActionDispatch::IntegrationTest
       login(@user, password: @user.password)
     end
 
-    teardown do
-      @user.destroy
-      @garnish.destroy
-    end
-
     should "get index" do
       get admin_garnishes_path
       assert_response :success

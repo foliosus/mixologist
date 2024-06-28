@@ -17,10 +17,7 @@ class IngredientTest < ActiveSupport::TestCase
 
   context "an ingredient" do
     setup do
-      @ingredient = create(:ingredient)
-    end
-    teardown do
-      @ingredient.destroy
+      @ingredient = create(:ingredient, ingredient_category: create(:ingredient_category))
     end
 
     should "be found by name" do

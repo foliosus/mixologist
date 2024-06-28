@@ -14,10 +14,6 @@ class Admin::IngredientCategoriesControllerTest < ActionDispatch::IntegrationTes
       @user = create(:user)
       login(@user, password: @user.password)
     end
-    teardown do
-      @ingredient_category.destroy
-      @user.destroy
-    end
 
     should "get index" do
       get admin_ingredient_categories_path

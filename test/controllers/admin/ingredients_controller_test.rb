@@ -10,14 +10,10 @@ class Admin::IngredientsControllerTest < ActionDispatch::IntegrationTest
 
   context "when logged in with an ingredient" do
     setup do
-      @ingredient = create(:ingredient)
+      @base_spirit = create(:ingredient_category, :base_spirit)
+      @ingredient = create(:ingredient, ingredient_category: @base_spirit)
       @user = create(:user)
       login(@user, password: @user.password)
-    end
-
-    teardown do
-      @user.destroy
-      @ingredient.destroy
     end
 
     should "get index" do

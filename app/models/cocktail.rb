@@ -5,6 +5,10 @@ class Cocktail < ActiveRecord::Base
   has_many :ingredients, through: :recipe_items
   has_and_belongs_to_many :garnishes, inverse_of: :cocktails
 
+  # ===========
+  # Validations
+  # ===========
+
   validates_presence_of :name
   validates_presence_of :recipe_items_blob
   validates_inclusion_of :technique, in: ALLOWED_TECHNIQUES, allow_blank: false
@@ -12,10 +16,19 @@ class Cocktail < ActiveRecord::Base
   accepts_nested_attributes_for :recipe_items,
                                 reject_if: proc {|attribs| attribs.values.all?{|v| v.blank?} }
 
+  # ============
+  # Query scopes
+  # ============
+
   default_scope -> { order("LOWER(#{table_name}.sort_name) ASC") }
 
   scope :full_recipe, -> { includes([
-    { recipe_items: [:unit, {:ingredient => :ingredient_category}]},
+    {
+      recipe_items: [
+        :unit,
+        {:ingredient => :ingredient_category}
+      ]
+    },
     :garnishes
   ]) }
 
@@ -40,6 +53,10 @@ class Cocktail < ActiveRecord::Base
     end
   }
 
+  # ===================
+  # Lifecycle callbacks
+  # ===================
+
   before_save :set_sort_name!, if: Proc.new {|cocktail| cocktail.name_changed? }
 
   def set_sort_name!
@@ -48,6 +65,10 @@ class Cocktail < ActiveRecord::Base
       self.sort_name.gsub!(/(\A)?#{stop_word}\s/i, '')
     end
   end
+
+  # ==============
+  # Search support
+  # ==============
 
   def self.find_cocktail_ids_for_keywords(keywords_array)
     return [] unless keywords_array.present?
@@ -66,6 +87,10 @@ class Cocktail < ActiveRecord::Base
     end
   end
 
+  # =============================
+  # Recipe items parsing/emitting
+  # =============================
+
   def recipe_items_blob
     recipe_items.collect(&:summary).join("\n")
   end
@@ -74,6 +99,10 @@ class Cocktail < ActiveRecord::Base
     blob = (new_blob || "").strip.gsub("\r", '').split("\n")
     self.recipe_items = RecipeItemProcessor.process(self, blob)
   end
+
+  # =========
+  # Technique
+  # =========
 
   def self.techniques
     ALLOWED_TECHNIQUES
@@ -87,6 +116,10 @@ class Cocktail < ActiveRecord::Base
       "#{technique}, garnish with #{garnishes_text.to_sentence}"
     end
   end
+
+  # ===========
+  # JSON export
+  # ===========
 
   def to_hash
     {

@@ -26,7 +26,7 @@ class Admin::UnitsController < ApplicationController
     @unit = Unit.new(unit_params)
 
     if @unit.save
-      redirect_to admin_units_path, notice: 'Unit was successfully created.'
+      redirect_to admin_units_path, notice: 'Unit was successfully created'
     else
       render :new, status: :unprocessable_entity
     end
@@ -38,7 +38,7 @@ class Admin::UnitsController < ApplicationController
     @unit = Unit.find(params[:id])
 
     if @unit.update(unit_params)
-      redirect_to(admin_units_path, notice: 'Unit was successfully updated.')
+      redirect_to admin_units_path, notice: 'Unit was updated'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -50,7 +50,7 @@ class Admin::UnitsController < ApplicationController
     @unit = Unit.find(params[:id])
     @unit.destroy
 
-    redirect_to(admin_units_url)
+    redirect_to admin_units_url, notice: "#{@unit.name.capitalize} unit has been deleted"
   end
 
   private

@@ -1,5 +1,5 @@
 = f.input :name, required: true
 = f.input :recipe_items_blob, as: :text, label: 'Ingredients', required: true
 = f.input :garnishes, as: :select, collection: @garnishes
-= f.input :technique, collection: ['shake', 'stir', 'special (see notes)'], required: true, as: :select
+= f.input :technique, collection: Cocktail.techniques, required: true, as: :select
 = f.input :notes

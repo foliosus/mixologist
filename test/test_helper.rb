@@ -1,6 +1,5 @@
 ENV["RAILS_ENV"] ||= "test"
-# Consider setting MT_NO_EXPECTATIONS to not add expectations to Object.
-# ENV["MT_NO_EXPECTATIONS"] = "true"
+ENV["MT_NO_EXPECTATIONS"] = "true" # Do not add expectation to Object
 require_relative "../config/environment"
 require "rails/test_help"
 require "minitest/rails"
@@ -14,6 +13,7 @@ require "database_cleaner/active_record"
 module ActiveSupport
   class TestCase
     include FactoryBot::Syntax::Methods
+    include ::DatabaseCleaning
 
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)
@@ -22,11 +22,13 @@ end
 
 class ActionController::TestCase
   include FactoryBot::Syntax::Methods
+  include ::DatabaseCleaning
 end
 
 class ActionDispatch::IntegrationTest
   include FactoryBot::Syntax::Methods
   include ReviseAuth::Test::Helpers
+  include ::DatabaseCleaning
 end
 
 
@@ -34,7 +36,7 @@ end
 # Minitest configuration
 # ======================
 
-Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new
+Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new(color: true)
 
 
 # ========================
@@ -42,16 +44,6 @@ Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new
 # ========================
 
 DatabaseCleaner.strategy = :transaction
-
-class Minitest::Spec
-  before :each do
-    DatabaseCleaner.start
-  end
-
-  after :each do
-    DatabaseCleaner.clean
-  end
-end
 
 
 # ===============

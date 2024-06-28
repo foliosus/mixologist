@@ -62,18 +62,12 @@ class RecipeItemTest < ActiveSupport::TestCase
 
   context "with an ingredient and a unit" do
     setup do
-      Unit.delete_all
-      Ingredient.delete_all
       @unit = create(:unit, name: 'ounce', abbreviation: 'oz')
-      @ingredient = create(:ingredient, name: 'brandy')
-    end
-    teardown do
-      @unit.destroy
-      @ingredient.destroy
+      @ingredient = create(:ingredient, name: 'brandy', ingredient_category: create(:ingredient_category))
     end
 
     should "accept a new summary" do
-      ri = build(:recipe_item)
+      ri = build(:recipe_item, unit: build(:unit), ingredient: build(:ingredient))
       assert @unit != ri.unit, "New and old units should be different"
       assert @ingredient != ri.ingredient, "New and old ingredients should be different"
       ri.summary = "7 #{@unit.name} #{@ingredient.name}"

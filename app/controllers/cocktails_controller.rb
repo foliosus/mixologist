@@ -2,10 +2,6 @@ class CocktailsController < ApplicationController
   # GET /cocktails
   # GET /cocktails.xml
   def index
-    unless Cocktail.any?
-      redirect_to(new_cocktail_path) and return
-    end
-
     @cocktails = Cocktail.full_recipe
 
     @search = SearchTerms.new(search_params.to_hash)
