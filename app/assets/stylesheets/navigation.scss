@@ -36,11 +36,11 @@
     }
 
     .current a {
-      color: $body_text_color;
-      cursor: default;
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
 
       &:hover {
-        background-color: transparent;
+        cursor: default;
       }
     }
   }
