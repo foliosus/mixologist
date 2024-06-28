@@ -9,7 +9,7 @@ $quinary_color: #3c91e6; // Light "tufts" blue
 
 $body_text_color: $secondary_color;
 $link_color: $primary_color;
-$hover_link_color: adjust-hue($link_color, 30);
+$hover_link_color: $quinary_color;
 
 $table_stripe_color: $tertiary_color;
 

@@ -14,19 +14,19 @@ $base-line-height: 20px;
 @import 'typography';
 
 
-// ===============
-// Use simple_form
-// ===============
-
-@import 'simple_form';
-
-
 // ==============
 // Site structure
 // ==============
 
 @import 'layout';
 @import 'navigation';
+
+
+// ===============
+// Use simple_form
+// ===============
+
+@import 'simple_form';
 
 
 // =======
