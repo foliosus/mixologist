@@ -38,7 +38,7 @@ class SearchTerms
   def scope
     keywords = {positive: [], negative: []}
     @terms.each do |term|
-      term.positive? ? keywords[:positive] << term : keywords[:negative] << term
+      keywords[term.positive? ? :positive : :negative] << term
     end
     Cocktail.with_and_without_keywords(keywords)
   end
