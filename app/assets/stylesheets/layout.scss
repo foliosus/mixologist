@@ -8,17 +8,19 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
+  min-height: 100vh;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, min-content);
+  grid-template-rows: min-content min-content auto min-content;
   grid-template-areas:
     "sitewide_navigation sitewide_navigation sitewide_navigation"
     "flash_messages flash_messages flash_messages"
     "primary_content primary_content secondary_content"
+    "footer footer footer"
   ;
   column-gap: 2rem;
-  row-gap: 16px;
+  row-gap: $base_line_height;
 
   #sitewide_navigation {
     grid-area: sitewide_navigation;
@@ -34,6 +36,10 @@ body {
 
   #secondary_content {
     grid-area: secondary_content;
+  }
+
+  #sitewide_footer {
+    grid-area: footer;
   }
 }
 

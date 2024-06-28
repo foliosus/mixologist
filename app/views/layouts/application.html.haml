@@ -31,3 +31,5 @@
       - if content_for?(:secondary_content)
         #secondary_content
           = yield :secondary_content
+      %footer#sitewide_footer
+        = render partial: 'layouts/footer'

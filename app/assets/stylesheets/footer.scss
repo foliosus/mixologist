@@ -1,0 +1,8 @@
+#sitewide_footer {
+  margin-top: $base_line_height * 2;
+
+  p {
+    @include set_font_size(-1);
+    color: scale-color($body_text_color, $whiteness: 50%);
+  }
+}
