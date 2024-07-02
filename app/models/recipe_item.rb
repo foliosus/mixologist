@@ -27,7 +27,7 @@ class RecipeItem < ActiveRecord::Base
   def convert_to_cups!
     if self.total_volume >= 8
       self.amount = amount/8
-      self.unit = Unit.find_by_name('cup')
+      self.unit = Unit.find_by_name('cup') || Unit.new(name: "cup", abbreviation: "cup", size_in_ounces: 8)
     end
   end
 
