@@ -21,7 +21,7 @@ class RecipeItem < ActiveRecord::Base
   end
 
   def total_volume
-    self.amount? ? self.amount * self.unit.size_in_ounces : 0
+    @total_volume ||= self.amount? ? self.amount * self.unit.size_in_ounces : 0
   end
 
   def convert_to_cups!
