@@ -1,3359 +1,818 @@
 {
+  "units": [
+    {
+      "name": "cup",
+      "abbreviation": "cup",
+      "size_in_ounces": "8.0"
+    },
+    {
+      "name": "whole",
+      "abbreviation": " ",
+      "size_in_ounces": "1.5"
+    },
+    {
+      "name": "ounce",
+      "abbreviation": "oz",
+      "size_in_ounces": "1.0"
+    },
+    {
+      "name": "tablespoon",
+      "abbreviation": "tbsp",
+      "size_in_ounces": "0.5"
+    },
+    {
+      "name": "teaspoon",
+      "abbreviation": "tsp",
+      "size_in_ounces": "0.1666666666666666"
+    },
+    {
+      "name": "dash",
+      "abbreviation": "dash",
+      "size_in_ounces": "0.0208333333333333"
+    },
+    {
+      "name": "drop",
+      "abbreviation": "drop",
+      "size_in_ounces": "0.00520833333333333"
+    }
+  ],
+  "ingredient_categories": [
+    {
+      "name": "Base spirit"
+    },
+    {
+      "name": "Beer"
+    },
+    {
+      "name": "Bitters"
+    },
+    {
+      "name": "Citrus"
+    },
+    {
+      "name": "Dairy"
+    },
+    {
+      "name": "Fortified wine"
+    },
+    {
+      "name": "Liqueur"
+    },
+    {
+      "name": "Other"
+    },
+    {
+      "name": "Spice"
+    },
+    {
+      "name": "Sweetener"
+    },
+    {
+      "name": "Syrup"
+    },
+    {
+      "name": "Wine"
+    }
+  ],
+  "ingredients": [
+    {
+      "name": "80-proof Demerara rum",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "absinthe",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "allspice dram",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "Amer Picon",
+      "notes": null,
+      "ingredient_category": "Fortified wine"
+    },
+    {
+      "name": "Angostura bitters",
+      "notes": null,
+      "ingredient_category": "Bitters"
+    },
+    {
+      "name": "apple cider",
+      "notes": null,
+      "ingredient_category": "Beer"
+    },
+    {
+      "name": "applejack",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "apricot brandy",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "Benedictine",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "bourbon",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "brandy",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "Campari",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "champagne",
+      "notes": null,
+      "ingredient_category": "Wine"
+    },
+    {
+      "name": "cherry brandy",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "cognac",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "cointreau",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "creme de violette",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "dark Jamaican rum",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "dark rum",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "dry gin",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "dry vermouth",
+      "notes": null,
+      "ingredient_category": "Fortified wine"
+    },
+    {
+      "name": "eggs",
+      "notes": null,
+      "ingredient_category": "Other"
+    },
+    {
+      "name": "falernum",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "grapefruit juice",
+      "notes": null,
+      "ingredient_category": "Citrus"
+    },
+    {
+      "name": "green Chartreuse",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "grenadine",
+      "notes": null,
+      "ingredient_category": "Syrup"
+    },
+    {
+      "name": "heavy cream",
+      "notes": null,
+      "ingredient_category": "Dairy"
+    },
+    {
+      "name": "honey",
+      "notes": null,
+      "ingredient_category": "Syrup"
+    },
+    {
+      "name": "Jamaica rum",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "lemon juice",
+      "notes": "fresh-squeezed is best",
+      "ingredient_category": "Citrus"
+    },
+    {
+      "name": "Lillet Blanc",
+      "notes": "A French fortified apéritif wine",
+      "ingredient_category": "Fortified wine"
+    },
+    {
+      "name": "lime juice",
+      "notes": "fresh-squeezed is best",
+      "ingredient_category": "Citrus"
+    },
+    {
+      "name": "maraschino liqueur",
+      "notes": "There are two kinds: Luxardo and the other one.",
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "nutmeg",
+      "notes": null,
+      "ingredient_category": "Spice"
+    },
+    {
+      "name": "old tom gin",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "orange bitters",
+      "notes": null,
+      "ingredient_category": "Bitters"
+    },
+    {
+      "name": "orange curacao",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "orange juice",
+      "notes": "fresh-squeezed is best",
+      "ingredient_category": "Citrus"
+    },
+    {
+      "name": "orange liqueur",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "Parfait Amour",
+      "notes": "A French, purple, orange-flavored liqueur",
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "Peychaud's bitters",
+      "notes": null,
+      "ingredient_category": "Bitters"
+    },
+    {
+      "name": "pisco",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "raspberry syrup",
+      "notes": null,
+      "ingredient_category": "Syrup"
+    },
+    {
+      "name": "rye",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "scotch",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "simple syrup",
+      "notes": null,
+      "ingredient_category": "Syrup"
+    },
+    {
+      "name": "sloe gin",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "spiced rum",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "St. Germain",
+      "notes": "Elderflower liqueur",
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "sugar",
+      "notes": null,
+      "ingredient_category": "Sweetener"
+    },
+    {
+      "name": "Swedish Punsch",
+      "notes": null,
+      "ingredient_category": "Liqueur"
+    },
+    {
+      "name": "sweet vermouth",
+      "notes": null,
+      "ingredient_category": "Fortified wine"
+    },
+    {
+      "name": "tequila",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "tequila reposado",
+      "notes": null,
+      "ingredient_category": "Base spirit"
+    },
+    {
+      "name": "whole milk",
+      "notes": null,
+      "ingredient_category": "Dairy"
+    }
+  ],
+  "garnishes": [
+    {
+      "name": "apple slice"
+    },
+    {
+      "name": "lemon twist"
+    },
+    {
+      "name": "lemon wedge"
+    },
+    {
+      "name": "lime twist"
+    },
+    {
+      "name": "lime wedge"
+    },
+    {
+      "name": "lime wheel"
+    },
+    {
+      "name": "maraschino cherry"
+    },
+    {
+      "name": "nutmeg"
+    },
+    {
+      "name": "orange twist"
+    },
+    {
+      "name": "orange wheel"
+    },
+    {
+      "name": "pineapple slice"
+    }
+  ],
   "cocktails": [
     {
       "name": "Amatitan Monk",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "tequila reposado",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "St. Germain",
-            "notes": "Elderflower liqueur",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Benedictine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 oz tequila reposado\n3/4 oz St. Germain\n1/4 oz lemon juice\n1/4 oz lime juice\n1/4 oz Benedictine",
       "garnishes": [
-        {
-          "name": "lime wedge"
-        }
+        "lime wedge"
       ]
     },
     {
       "name": "Ancient Mariner",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "80-proof Demerara rum",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dark Jamaican rum",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "simple syrup",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "grapefruit juice",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "allspice dram",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "1 oz 80-proof Demerara rum\n1 oz dark Jamaican rum\n3/4 oz lime juice\n1/2 oz simple syrup\n1/2 oz grapefruit juice\n1/4 oz allspice dram",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "Aviation",
       "notes": "Great on a hot day!",
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 3.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "maraschino liqueur",
-            "notes": "There are two kinds: Luxardo and the other one.",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 2.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "3 dashes maraschino liqueur\n2 1/2 oz dry gin\n3/4 oz lemon juice",
       "garnishes": [
-        {
-          "name": "maraschino cherry"
-        }
+        "maraschino cherry"
       ]
     },
     {
       "name": "Barnum Was Right Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Angostura bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "apricot brandy",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 oz dry gin\n2 dashes Angostura bitters\n1 oz apricot brandy\n1/2 oz lemon juice",
       "garnishes": [
-        {
-          "name": "lemon twist"
-        }
+        "lemon twist"
       ]
     },
     {
       "name": "The Bebbo Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "orange juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "honey",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "2 tsp orange juice\n1 1/2 oz dry gin\n1 oz lemon juice\n1/2 oz honey",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "The Blinker",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "rye",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "grapefruit juice",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "raspberry syrup",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "2 oz rye\n1 oz grapefruit juice\n1 tsp raspberry syrup",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "The Blue Moon",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "creme de violette",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "2 oz dry gin\n1/2 oz lemon juice\n1/2 oz creme de violette",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "The Boulevardier",
       "notes": "Good with Carpano Antica vermouth",
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "bourbon",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "sweet vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Campari",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 1/2 oz bourbon\n1 oz sweet vermouth\n1 oz Campari",
       "garnishes": [
-        {
-          "name": "maraschino cherry"
-        }
+        "maraschino cherry"
       ]
     },
     {
       "name": "Brandy scaffa",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "brandy",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "green Chartreuse",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "maraschino liqueur",
-            "notes": "There are two kinds: Luxardo and the other one.",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "1 oz brandy\n1/2 oz green Chartreuse\n1/4 oz maraschino liqueur",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "The Brooklyn Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "maraschino liqueur",
-            "notes": "There are two kinds: Luxardo and the other one.",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "rye",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "Amer Picon",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 tsp maraschino liqueur\n2 oz rye\n2 tsp Amer Picon\n3/4 oz dry vermouth",
       "garnishes": [
-        {
-          "name": "maraschino cherry"
-        }
+        "maraschino cherry"
       ]
     },
     {
       "name": "Caprice",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Benedictine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "1 1/2 oz dry gin\n1/2 oz Benedictine\n1/2 oz dry vermouth",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "Cherry Blossom",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "apricot brandy",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "orange liqueur",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "grenadine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "cherry brandy",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 tsp lemon juice\n2 oz apricot brandy\n1 1/2 tsp orange liqueur\n1 1/2 tsp grenadine\n1 oz cherry brandy",
       "garnishes": [
-        {
-          "name": "maraschino cherry"
-        }
+        "maraschino cherry"
       ]
     },
     {
       "name": "The Communist",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "orange juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "cherry brandy",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "1 oz dry gin\n1 oz orange juice\n3/4 oz lemon juice\n1/2 oz cherry brandy",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "The Corpse Reviver #2",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 3.0,
-          "unit": {
-            "name": "drop",
-            "abbreviation": "drop",
-            "size_in_ounces": "0.00520833333333333"
-          },
-          "ingredient": {
-            "name": "absinthe",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "orange liqueur",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Lillet Blanc",
-            "notes": "A French fortified apéritif wine",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "3 drops absinthe\n1 oz lemon juice\n1 oz dry gin\n1 oz orange liqueur\n1 oz Lillet Blanc",
       "garnishes": [
-        {
-          "name": "maraschino cherry"
-        }
+        "maraschino cherry"
       ]
     },
     {
       "name": "Creole",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "sweet vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "rye",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Benedictine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Amer Picon",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 oz rye\n1 oz sweet vermouth\n1/4 oz Benedictine\n1/4 oz Amer Picon",
       "garnishes": [
-        {
-          "name": "lemon twist"
-        }
+        "lemon twist"
       ]
     },
     {
       "name": "Devonia Cocktail",
       "notes": "You must use fresh-pressed, unpasteurized cider. The pasteurization ruins the drink.\r\n",
       "technique": "stir",
-      "recipe_items": [
-        {
-          "amount": 4.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "apple cider",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Beer"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "orange bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "4 oz apple cider\n2 oz dry gin\n2 dashes orange bitters",
       "garnishes": [
-        {
-          "name": "apple slice"
-        },
-        {
-          "name": "orange twist"
-        }
+        "apple slice",
+        "orange twist"
       ]
     },
     {
       "name": "Doctor Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Jamaica rum",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Swedish Punsch",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 oz Jamaica rum\n1 oz lime juice\n1 oz Swedish Punsch",
       "garnishes": [
-        {
-          "name": "lime twist"
-        }
+        "lime twist"
       ]
     },
     {
       "name": "East India Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 3.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "apricot brandy",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "maraschino liqueur",
-            "notes": "There are two kinds: Luxardo and the other one.",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Angostura bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "orange curacao",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "raspberry syrup",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "3 oz apricot brandy\n1 tsp maraschino liqueur\n1 dash Angostura bitters\n1 tsp orange curacao\n1/2 oz raspberry syrup",
       "garnishes": [
-        {
-          "name": "maraschino cherry"
-        }
+        "maraschino cherry"
       ]
     },
     {
       "name": "Egg nog",
       "notes": "Blend the eggs, slowly add the sugar. With the blender running, add nutmeg and all liquid ingredients. Chill thoroughly, even overnight.\r\n        \r\nFrom http://www.jeffreymorgenthaler.com/2009/egg-nog/",
       "technique": "special (see notes)",
-      "recipe_items": [
-        {
-          "amount": 6.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "whole milk",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Dairy"
-            }
-          }
-        },
-        {
-          "amount": 4.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "heavy cream",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Dairy"
-            }
-          }
-        },
-        {
-          "amount": 3.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "sugar",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Sweetener"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "apricot brandy",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "whole",
-            "abbreviation": " ",
-            "size_in_ounces": "1.5"
-          },
-          "ingredient": {
-            "name": "eggs",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Other"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "spiced rum",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "nutmeg",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Spice"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "6 oz whole milk\n4 oz heavy cream\n3 oz sugar\n2 oz apricot brandy\n2 eggs\n2 oz spiced rum\n1/2 tsp nutmeg",
       "garnishes": [
-        {
-          "name": "nutmeg"
-        }
+        "nutmeg"
       ]
     },
     {
       "name": "English Rose",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "grenadine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Parfait Amour",
-            "notes": "A French, purple, orange-flavored liqueur",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 3/4 oz dry gin\n1 tsp grenadine\n3/4 oz dry vermouth\n1/2 oz Parfait Amour\n1/4 oz lemon juice",
       "garnishes": [
-        {
-          "name": "lemon twist"
-        }
+        "lemon twist"
       ]
     },
     {
       "name": "The Ford Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "stir",
-      "recipe_items": [
-        {
-          "amount": 3.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "orange bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 3.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Benedictine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "old tom gin",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "3 dashes Benedictine\n3 dashes orange bitters\n1 oz dry vermouth\n1 oz old tom gin",
       "garnishes": [
-        {
-          "name": "orange twist"
-        }
+        "orange twist"
       ]
     },
     {
       "name": "The French 75",
       "notes": "Shake, top with champagne, stir gently, garnish with a lemon spiral and a cherry",
       "technique": "special (see notes)",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "simple syrup",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        },
-        {
-          "amount": null,
-          "unit": null,
-          "ingredient": {
-            "name": "champagne",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Wine"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "2 oz dry gin\n1 oz lemon juice\n1 tsp simple syrup\nchampagne",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "Gypsy",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "green Chartreuse",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "St. Germain",
-            "notes": "Elderflower liqueur",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1/2 oz St. Germain\n1/2 oz lime juice\n1/2 oz green Chartreuse",
       "garnishes": [
-        {
-          "name": "lime wheel"
-        }
+        "lime wheel"
       ]
     },
     {
       "name": "Have a Heart Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Swedish Punsch",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "grenadine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 1/2 oz dry gin\n3/4 oz lime juice\n3/4 oz Swedish Punsch\n1/4 oz grenadine",
       "garnishes": [
-        {
-          "name": "lime wedge"
-        }
+        "lime wedge"
       ]
     },
     {
       "name": "Hoop La!",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "orange liqueur",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "cognac",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Lillet Blanc",
-            "notes": "A French fortified apéritif wine",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "1 oz lemon juice\n1 oz orange liqueur\n1 oz Lillet Blanc\n1 oz cognac",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "The Income Tax Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Angostura bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "sweet vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "orange juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 dashes Angostura bitters\n1 1/2 oz dry gin\n3/4 oz sweet vermouth\n3/4 oz dry vermouth\n1/2 oz orange juice",
       "garnishes": [
-        {
-          "name": "orange twist"
-        }
+        "orange twist"
       ]
     },
     {
       "name": "The Jack Rose Cocktail",
       "notes": "You can use lemon juice instead of lime juice, and feel free to adjust the grenadine depending on the sourness of the citrus.",
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "grenadine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        },
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "applejack",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 dashes grenadine\n1 1/2 oz applejack\n1 oz lime juice",
       "garnishes": [
-        {
-          "name": "apple slice"
-        }
+        "apple slice"
       ]
     },
     {
       "name": "The Japalac Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "raspberry syrup",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "rye",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "orange juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 tsp raspberry syrup\n3/4 oz rye\n3/4 oz dry vermouth\n1/4 oz orange juice",
       "garnishes": [
-        {
-          "name": "orange twist"
-        }
+        "orange twist"
       ]
     },
     {
       "name": "Knickerbocker à la Monsieur",
       "notes": "Virgin Islands rum is best\r\nGarnish with other seasonal fruit as desired",
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "80-proof Demerara rum",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "raspberry syrup",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "orange curacao",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 oz 80-proof Demerara rum\n1 oz lemon juice\n1/2 oz raspberry syrup\n1/2 oz orange curacao",
       "garnishes": [
-        {
-          "name": "orange wheel"
-        },
-        {
-          "name": "pineapple slice"
-        }
+        "orange wheel",
+        "pineapple slice"
       ]
     },
     {
       "name": "The Lion's Tail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Angostura bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "bourbon",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "allspice dram",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "tablespoon",
-            "abbreviation": "tbsp",
-            "size_in_ounces": "0.5"
-          },
-          "ingredient": {
-            "name": "simple syrup",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 dashes Angostura bitters\n2 oz bourbon\n3/4 oz allspice dram\n1/2 oz lime juice\n1/2 tbsp simple syrup",
       "garnishes": [
-        {
-          "name": "lemon wedge"
-        }
+        "lemon wedge"
       ]
     },
     {
       "name": "Lucien Gaudin Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Campari",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "cointreau",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 oz dry gin\n1/2 oz Campari\n1/2 oz dry vermouth\n1/2 oz cointreau",
       "garnishes": [
-        {
-          "name": "orange twist"
-        }
+        "orange twist"
       ]
     },
     {
       "name": "The Manhattan",
       "notes": "Can use bourbon instead of rye",
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "rye",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Angostura bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "sweet vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 1/2 oz rye\n2 dashes Angostura bitters\n1 oz sweet vermouth",
       "garnishes": [
-        {
-          "name": "maraschino cherry"
-        },
-        {
-          "name": "orange twist"
-        }
+        "maraschino cherry",
+        "orange twist"
       ]
     },
     {
       "name": "Manhattan (perfect)",
-      "notes": "",
+      "notes": null,
       "technique": "stir",
-      "recipe_items": [
-        {
-          "amount": 2.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "rye",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Angostura bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "sweet vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 1/2 oz rye\n2 dashes Angostura bitters\n1/2 oz sweet vermouth\n1/2 oz dry vermouth",
       "garnishes": [
-        {
-          "name": "maraschino cherry"
-        },
-        {
-          "name": "orange twist"
-        }
+        "maraschino cherry",
+        "orange twist"
       ]
     },
     {
       "name": "Margarita",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "tequila",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "orange liqueur",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 oz lime juice\n1 oz orange liqueur\n1 oz tequila",
       "garnishes": [
-        {
-          "name": "lime wedge"
-        }
+        "lime wedge"
       ]
     },
     {
       "name": "Martini",
-      "notes": "",
+      "notes": null,
       "technique": "stir",
-      "recipe_items": [
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "sweet vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 1/2 oz dry gin\n1/2 oz sweet vermouth",
       "garnishes": [
-        {
-          "name": "lemon twist"
-        }
+        "lemon twist"
       ]
     },
     {
       "name": "The Millionaire",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dark rum",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "sloe gin",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "apricot brandy",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 1/2 oz lime juice\n1 1/2 oz dark rum\n3/4 oz apricot brandy\n3/4 oz sloe gin",
       "garnishes": [
-        {
-          "name": "lime wedge"
-        }
+        "lime wedge"
       ]
     },
     {
       "name": "The Modernista",
       "notes": "Dark Jamaican rum is best",
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "orange bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "scotch",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "absinthe",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dark rum",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Swedish Punsch",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 dashes orange bitters\n2 oz scotch\n1 tsp absinthe\n1/2 oz lemon juice\n1/2 oz Swedish Punsch\n1/2 oz dark rum",
       "garnishes": [
-        {
-          "name": "lemon twist"
-        }
+        "lemon twist"
       ]
     },
     {
       "name": "Monkey Gland",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "orange juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "grenadine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "absinthe",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 1/2 oz dry gin\n1 1/2 oz orange juice\n1 tsp grenadine\n1 tsp absinthe",
       "garnishes": [
-        {
-          "name": "orange twist"
-        }
+        "orange twist"
       ]
     },
     {
       "name": "Negroni",
-      "notes": "",
+      "notes": null,
       "technique": "stir",
-      "recipe_items": [
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "sweet vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Campari",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 oz dry gin\n1 oz sweet vermouth\n1 oz Campari",
       "garnishes": [
-        {
-          "name": "orange wheel"
-        }
+        "orange wheel"
       ]
     },
     {
       "name": "Pegu Club Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Angostura bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "cointreau",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "2 dashes Angostura bitters\n1 1/2 oz dry gin\n3/4 oz lime juice\n1/2 oz cointreau",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "The Pendennis Cocktail",
       "notes": "Can substitute peach brandy for the apricot brandy.",
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 3.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Peychaud's bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry gin",
-            "notes": null,
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "apricot brandy",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "3 dashes Peychaud's bitters\n2 oz dry gin\n1 oz apricot brandy\n3/4 oz lime juice",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "Pisco Crusta",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 5.0,
-          "unit": {
-            "name": "drop",
-            "abbreviation": "drop",
-            "size_in_ounces": "0.00520833333333333"
-          },
-          "ingredient": {
-            "name": "Angostura bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "pisco",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "maraschino liqueur",
-            "notes": "There are two kinds: Luxardo and the other one.",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "grenadine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "5 drops Angostura bitters\n2 oz pisco\n1/4 oz lemon juice\n1/4 oz maraschino liqueur\n1/4 oz grenadine",
       "garnishes": [
-        {
-          "name": "lemon twist"
-        }
+        "lemon twist"
       ]
     },
     {
       "name": "The Purgatory",
       "notes": "From @thelancearthur, for the occasion of the final 2016 presidential debate between the \"nasty woman\" and wigfingers.",
       "technique": "stir",
-      "recipe_items": [
-        {
-          "amount": 2.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "rye",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "green Chartreuse",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "Benedictine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "2 1/2 oz rye\n3/4 oz Benedictine\n3/4 oz green Chartreuse",
+      "garnishes": [
+
+      ]
     },
     {
       "name": "Royal Bermuda Yacht Club Cocktail",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "orange liqueur",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "falernum",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "80-proof Demerara rum",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lime juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 oz 80-proof Demerara rum\n2 dashes orange liqueur\n2 tsp falernum\n3/4 oz lime juice",
       "garnishes": [
-        {
-          "name": "lime wedge"
-        }
+        "lime wedge"
       ]
     },
     {
       "name": "The Scofflaw",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "rye",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "dry vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 0.75,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "grenadine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "1 1/2 oz rye\n1 oz dry vermouth\n3/4 oz lemon juice\n3/4 oz grenadine",
       "garnishes": [
-        {
-          "name": "lemon twist"
-        }
+        "lemon twist"
       ]
     },
     {
       "name": "Vieux Carré",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Angostura bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 2.0,
-          "unit": {
-            "name": "dash",
-            "abbreviation": "dash",
-            "size_in_ounces": "0.0208333333333333"
-          },
-          "ingredient": {
-            "name": "Peychaud's bitters",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Bitters"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "sweet vermouth",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Fortified wine"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "rye",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "cognac",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 0.5,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "Benedictine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Liqueur"
-            }
-          }
-        }
-      ],
+      "recipe_items_blob": "2 dashes Angostura bitters\n2 dashes Peychaud's bitters\n1 oz rye\n1 oz sweet vermouth\n1 oz cognac\n1/2 tsp Benedictine",
       "garnishes": [
-        {
-          "name": "lemon twist"
-        }
+        "lemon twist"
       ]
     },
     {
       "name": "Ward Eight",
-      "notes": "",
+      "notes": null,
       "technique": "shake",
-      "recipe_items": [
-        {
-          "amount": 1.5,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "bourbon",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Base spirit"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "lemon juice",
-            "notes": "fresh-squeezed is best",
-            "ingredient_category": {
-              "name": "Citrus"
-            }
-          }
-        },
-        {
-          "amount": 1.0,
-          "unit": {
-            "name": "teaspoon",
-            "abbreviation": "tsp",
-            "size_in_ounces": "0.166666666666667"
-          },
-          "ingredient": {
-            "name": "sugar",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Spice"
-            }
-          }
-        },
-        {
-          "amount": 0.25,
-          "unit": {
-            "name": "ounce",
-            "abbreviation": "oz",
-            "size_in_ounces": "1.0"
-          },
-          "ingredient": {
-            "name": "grenadine",
-            "notes": "",
-            "ingredient_category": {
-              "name": "Syrup"
-            }
-          }
-        }
-      ],
-      "garnishes": []
+      "recipe_items_blob": "1 1/2 oz bourbon\n1 oz lemon juice\n1 tsp sugar\n1/4 oz grenadine",
+      "garnishes": [
+
+      ]
     }
   ]
 }
