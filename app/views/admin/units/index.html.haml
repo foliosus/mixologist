@@ -4,12 +4,14 @@
   %thead
     %tr
       %th Name
+      %th Abbrev
       %th Size in ounces
       %th
   %tbody
     - @units.each do |unit|
       %tr
         %td= unit.name
+        %td= unit.abbreviation
         %td= html_fractions(unit_to_fraction(unit))
         %td.actions
           = link_to Icon.new(:edit), edit_admin_unit_path(unit)
