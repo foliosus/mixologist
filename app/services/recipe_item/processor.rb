@@ -2,7 +2,7 @@
 # item summaries, and returns a set of RecipeItem objects, updated/new as necessary
 # the values in the list.
 
-class RecipeItemProcessor
+class RecipeItem::Processor
   # Takes in a Cocktail object, and an array of textual recipe item summaries.
   # Changes the Cocktail object's RecipeItem association
   def self.process(cocktail, recipe_items_text_list)

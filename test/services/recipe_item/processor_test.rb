@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RecipeItemProcessorTest < ActiveSupport::TestCase
+class RecipeItem::ProcessorTest < ActiveSupport::TestCase
   context "with a cocktail with two items" do
     setup do
       @ingredient_category = create(:ingredient_category)
@@ -17,7 +17,7 @@ class RecipeItemProcessorTest < ActiveSupport::TestCase
     end
 
     should "delete an ingredient if it's missing from the update" do
-      new_items = RecipeItemProcessor.process(@cocktail, [@item_summary2])
+      new_items = RecipeItem::Processor.process(@cocktail, [@item_summary2])
 
       assert_equal 1, new_items.length, "Should have only one item in the list"
 
@@ -27,7 +27,7 @@ class RecipeItemProcessorTest < ActiveSupport::TestCase
     should "add an ingredient if it's in the update" do
       new_ingredient = create(:ingredient)
       expected_new_item = RecipeItem.new(ingredient: new_ingredient, unit: @unit1, amount: 1)
-      new_items = RecipeItemProcessor.process(@cocktail, [@item_summary1, @item_summary2, expected_new_item.summary])
+      new_items = RecipeItem::Processor.process(@cocktail, [@item_summary1, @item_summary2, expected_new_item.summary])
 
       assert_equal 3, new_items.length, "Should have a new item in the list"
 
@@ -40,7 +40,7 @@ class RecipeItemProcessorTest < ActiveSupport::TestCase
 
     should "modify an existing ingredient if it's in the update" do
       modified_summary2 = @item_summary2.sub("2", "3")
-      new_items = RecipeItemProcessor.process(@cocktail, [@item_summary1, modified_summary2])
+      new_items = RecipeItem::Processor.process(@cocktail, [@item_summary1, modified_summary2])
 
       assert_equal 2, new_items.length, "Should have the same number of ingredients in the list"
 

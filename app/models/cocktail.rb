@@ -97,7 +97,7 @@ class Cocktail < ActiveRecord::Base
 
   def recipe_items_blob=(new_blob)
     blob = (new_blob || "").strip.gsub("\r", '').split("\n")
-    self.recipe_items = RecipeItemProcessor.process(self, blob)
+    self.recipe_items = RecipeItem::Processor.process(self, blob)
   end
 
   # =========

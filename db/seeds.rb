@@ -1,52 +1,46 @@
+keys = ["units", "ingredient_categories", "ingredients", "garnishes", "cocktails"]
+
 raw_records_path = Rails.root / "db" / "cocktails.json"
-puts "** Loading cocktails from #{raw_records_path}"
+puts "** Loading cocktails and supporting data from #{raw_records_path}"
 raw_records = JSON.load_file(raw_records_path.to_s)
 puts "   parsed the file"
-cocktail_data = raw_records["cocktails"]
-puts "   found #{cocktail_data.length} recipes"
+keys.each do |key|
+  puts "   found #{raw_records[key].length} #{key}"
+end
 
 Cocktail.transaction do
-  cocktails = cocktail_data.collect do |cocktail_datum|
-    recipe_items = cocktail_datum["recipe_items"].collect do |recipe_item|
-      ingredient = Ingredient.find_or_initialize_by(
-        recipe_item["ingredient"].except("ingredient_category"),
-      )
-      ingredient_category = recipe_item["ingredient"]["ingredient_category"]
-      if ingredient_category != "null"
-        ingredient.ingredient_category = IngredientCategory.find_or_initialize_by(recipe_item["ingredient"]["ingredient_category"])
+  saved_records = {}
+  unsaved_records = {}
+
+  keys.each do |key|
+    puts "** Creating #{key}"
+    klass = key.classify.constantize # "ingredient_categories" => IngredientCategory
+    saved_records[key] = []
+    unsaved_records[key] = []
+    raw_records[key].each do |datum|
+      datum.symbolize_keys!
+      record = klass.import_from_hash(datum)
+      if record.persisted? && !record.changed?
+        saved_records[key] << record
+      else
+        unsaved_records[key] << record
       end
-
-      unit = recipe_item["unit"] == "null" ? nil : Unit.find_or_initialize_by(recipe_item["unit"])
-
-      RecipeItem.new(
-        amount: recipe_item["amount"],
-        unit: unit,
-        ingredient: ingredient
-      )
     end
-
-    garnishes = cocktail_datum["garnishes"].collect do |garnish|
-      Garnish.find_or_initialize_by(garnish)
-    end
-
-    Cocktail.create(
-      name: cocktail_datum["name"],
-      notes: cocktail_datum["notes"],
-      technique: cocktail_datum["technique"],
-      recipe_items: recipe_items,
-      garnishes: garnishes
-    )
   end
 
-  unsaved_records = cocktails.reject(&:persisted?)
-
-  if unsaved_records.blank?
-    puts "   saved #{cocktails.length} records"
+  if unsaved_records.all?{|k,v| v.blank? }
+    keys.each do |key|
+      puts "   saved #{saved_records[key].length} #{key}"
+    end
   else
     puts "** Couldn't save all of the records! The #{unsaved_records.length} problems:"
-    unsaved_records.each do |cocktail|
-      puts cocktail.inspect
-      puts cocktail.errors.inspect
+    puts unsaved_records.inspect
+    keys.each do |key|
+      unsaved_records[key].each do |record|
+        puts record.inspect
+        puts record.errors.inspect
+        puts
+      end
     end
     raise ActiveRecord::Rollback, "Not all of the records were valid!"
   end

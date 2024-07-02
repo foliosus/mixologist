@@ -76,6 +76,6 @@ class RecipeItem < ActiveRecord::Base
   end
 
   def self.parse_from_string(str, options = {})
-    RecipeItemParser.new(str, options).parse!
+    Parser.new(str, options).parse!
   end
 end

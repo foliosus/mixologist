@@ -1,4 +1,4 @@
-class RecipeItemParser
+class RecipeItem::Parser
   def initialize(str, options = {})
     @str = str
     @options = options
