@@ -1,7 +1,7 @@
 class RecipeItem < ActiveRecord::Base
   belongs_to :cocktail, inverse_of: :recipe_items
   belongs_to :ingredient, inverse_of: :recipe_items
-  belongs_to :unit, inverse_of: :recipe_items
+  belongs_to :unit, inverse_of: :recipe_items, optional: true # Optional, because of unitless items like eggs
 
   default_scope ->{ order('amount DESC') }
 
@@ -21,7 +21,7 @@ class RecipeItem < ActiveRecord::Base
   end
 
   def total_volume
-    @total_volume ||= self.amount? ? self.amount * self.unit.size_in_ounces : 0
+    @total_volume ||= self.amount? ? self.amount * (self.unit&.size_in_ounces || 1) : 0
   end
 
   def convert_to_cups!

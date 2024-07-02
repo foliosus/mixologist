@@ -3,7 +3,7 @@ require 'test_helper'
 class RecipeItemTest < ActiveSupport::TestCase
   should belong_to(:cocktail)
   should belong_to(:ingredient)
-  should belong_to(:unit)
+  should belong_to(:unit).optional
 
   should "have a summary" do
     ri = build(:recipe_item, amount: 1)
