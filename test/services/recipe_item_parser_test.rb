@@ -31,4 +31,12 @@ class RecipeItemParserTest < ActiveSupport::TestCase
     assert_nil ri.unit
     assert_equal @ingredient, ri.ingredient
   end
+
+  should "parse 1 egg" do
+    egg = create(:ingredient, name: "egg", ingredient_category: create(:ingredient_category))
+    ri = RecipeItemParser.new("1 egg").parse!
+    assert_equal 1, ri.amount
+    assert_nil ri.unit
+    assert_equal egg, ri.ingredient
+  end
 end
