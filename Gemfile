@@ -68,4 +68,5 @@ group :test do
   gem "test-unit"
   gem "shoulda"
   gem "database_cleaner-active_record"
+  gem "rails-controller-testing"
 end

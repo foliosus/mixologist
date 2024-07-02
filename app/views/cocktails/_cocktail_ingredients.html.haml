@@ -1,0 +1,3 @@
+%ul
+  - cocktail.recipe_items.sort.each do |item|
+    %li{itemprop: "recipeIngredient"}= html_fractions(item.summary)

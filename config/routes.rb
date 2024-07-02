@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root to: 'cocktails#index'
 
-  resources :cocktails, only: [:index, :show]
+  resources :cocktails, only: [:index, :show] do
+    member do
+      post :show_scaled
+    end
+  end
 
   # revise_auth
   scope module: :revise_auth do

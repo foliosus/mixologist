@@ -8,10 +8,6 @@ class CocktailsController < ApplicationController
     if @search.terms.present?
       @cocktails = @cocktails.merge(@search.scope)
     end
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
 
   # GET /cocktails/1
@@ -19,18 +15,31 @@ class CocktailsController < ApplicationController
   def show
     @cocktail = Cocktail.full_recipe.find(params[:id])
     @scaler = ScaleFormBacker.new
-    @scale = params[:scale].try(:to_i)
+    @scale = scaler_params[:scale].try(:to_i)
 
     if params[:scale] && (@scale > 0)
       @cocktail = RecipeScaler.new(@cocktail, scale: @scale).cocktail
     end
+  end
 
-    respond_to do |format|
-      format.html # show.html.erb
-    end
+  def show_scaled
+    cocktail = Cocktail.full_recipe.find(params[:id])
+    scale = scaler_params[:scale]
+    scaler = ScaleFormBacker.new(scale)
+    cocktail = RecipeScaler.new(cocktail, scale: scale.try(:to_i)).cocktail
+
+    render partial: "scaled_recipe", locals: {
+      scaler: scaler,
+      cocktail: cocktail,
+      show_scaled_recipe: true
+    }
   end
 
   private def search_params
     params[:search_terms].present? ? params.require(:search_terms).permit(:term_string) : {}
+  end
+
+  private def scaler_params
+    params[:scale_form_backer].present? ? params.require(:scale_form_backer).permit(:scale) : {}
   end
 end

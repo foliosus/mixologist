@@ -1,0 +1,7 @@
+= turbo_frame_tag "scaled_recipe" do
+  %h2 Scale this recipe
+  = simple_form_for local_assigns[:scaler], url: show_scaled_cocktail_path(cocktail) do |f|
+    = f.input :scale, as: :integer, label: 'Scaling factor', wrapper_html: {class: "stacked"}, required: false
+
+  - if local_assigns[:cocktail] && local_assigns[:show_scaled_recipe]
+    = render partial: "cocktail_ingredients", locals: {cocktail: local_assigns[:cocktail]}

@@ -3,7 +3,8 @@ class RecipeScaler
 
   def initialize(cocktail, scale: 4)
     @cocktail = cocktail
-    @scale = scale
+    @scale = scale&.to_i || 1
+    @scale = 1 if @scale < 1
   end
 
   def cocktail

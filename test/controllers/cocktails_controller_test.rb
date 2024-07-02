@@ -18,6 +18,12 @@ class CocktailsControllerTest < ActionDispatch::IntegrationTest
       get cocktail_path(@cocktail)
       assert_response :success
     end
+
+    should "show scaled cocktail" do
+      post show_scaled_cocktail_path(@cocktail), params: {scale_form_backer: {scale: 4}}
+      assert_response :success
+      assert_template "cocktails/_scaled_recipe"
+    end
   end
 
   context "with multiple cocktails" do
