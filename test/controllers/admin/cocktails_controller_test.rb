@@ -17,17 +17,6 @@ class Admin::CocktailsControllerTest < ActionDispatch::IntegrationTest
       login(@user, password: @user.password)
     end
 
-    should "get index" do
-      get admin_cocktails_path
-      assert_response :success
-      assert_select ".cocktails cocktail", {count: Cocktail.count}, "Should have one card per cocktail"
-    end
-
-    should "show cocktail" do
-      get admin_cocktail_path(@cocktail)
-      assert_response :success
-    end
-
     should "get new" do
       get new_admin_cocktail_path
       assert_response :success

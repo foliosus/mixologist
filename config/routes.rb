@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   authenticated do
     namespace :admin do
-      resources :cocktails
+      resources :cocktails, except: [:index, :show]
       resources :garnishes, except: :show
       resources :ingredients, except: :show
       resources :units, except: :show
