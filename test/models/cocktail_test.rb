@@ -51,7 +51,7 @@ class CocktailTest < ActiveSupport::TestCase
       setup do
         @cocktail = build(:cocktail, garnishes_count: 2)
       end
-      should "be the techinque with the garnishes" do
+      should "be the technique with the garnishes" do
         garnishes_text = @cocktail.garnishes.collect{|g| "a #{g.name}"}.to_sentence
         expected = "#{@cocktail.technique}, garnish with #{garnishes_text}"
         assert_equal expected, @cocktail.full_technique
