@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UnitTest < ActiveSupport::TestCase
   context "associations" do
-    should have_many(:recipe_items)
+    should have_many(:recipe_items).inverse_of(:unit)
   end
 
   context "validations" do
@@ -74,6 +74,30 @@ class UnitTest < ActiveSupport::TestCase
 
     should "use the plural name for 2 aliquots" do
       assert_equal @unit.name.pluralize, @unit.abbreviation_for_amount(2)
+    end
+  end
+
+  context "import/export" do
+    should "serialize to hash" do
+      unit = build(:unit)
+      expected = {
+        name: unit.name,
+        abbreviation: unit.abbreviation,
+        size_in_ounces: unit.size_in_ounces
+      }
+      assert_equal expected, unit.to_hash
+    end
+
+    should "import from hash" do
+      hsh = {
+        name: "dram",
+        abbreviation: "dr",
+        size_in_ounces: 1.0 / 16
+      }
+      unit = Unit.import_from_hash(hsh)
+      assert_equal hsh[:name], unit.name, "Should have the right name"
+      assert_equal hsh[:abbreviation], unit.abbreviation, "Should have the right abbreviation"
+      assert_equal hsh[:size_in_ounces], unit.size_in_ounces, "Should have the right size in ounces"
     end
   end
 end

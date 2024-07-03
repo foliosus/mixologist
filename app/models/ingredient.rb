@@ -29,11 +29,22 @@ class Ingredient < ActiveRecord::Base
     end
   end
 
+  # =============
+  # Import/export
+  # =============
+
+  def self.import_from_hash(hsh)
+    ingredient = find_or_initialize_by(hsh.slice(:name))
+    ingredient.ingredient_category = IngredientCategory.where(name: hsh.delete(:ingredient_category)).first
+    ingredient.update(hsh)
+    ingredient
+  end
+
   def to_hash
     {
       name: name,
-      notes: notes,
-      ingredient_category: ingredient_category.to_json
+      notes: notes.present? ? notes : nil,
+      ingredient_category: ingredient_category.name
     }
   end
 end

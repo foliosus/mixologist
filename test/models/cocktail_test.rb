@@ -78,4 +78,40 @@ class CocktailTest < ActiveSupport::TestCase
       end
     end
   end
+
+  context "import/export" do
+    should "serialize to hash" do
+      cocktail = build(:cocktail, notes: "my notes")
+      expected = {
+        name: cocktail.name,
+        notes: cocktail.notes,
+        technique: cocktail.technique,
+        recipe_items_blob: cocktail.recipe_items_blob,
+        garnishes: cocktail.garnishes.collect(&:name)
+      }
+      assert_equal expected, cocktail.to_hash
+    end
+
+    should "import from hash" do
+      ounce = create(:unit, name: "ounce", abbreviation: "oz")
+      base_spirit = create(:ingredient_category, :base_spirit)
+      gin = create(:ingredient, name: "gin", ingredient_category: base_spirit)
+      bourbon = create(:ingredient, name: "bourbon", ingredient_category: base_spirit)
+      lime_wedge = create(:garnish, name: "lime wedge")
+      hsh = {
+        name: "Bad idea cocktail",
+        notes: "some notes",
+        technique: "shake",
+        recipe_items_blob: "1 oz gin\n1/2 oz bourbon", # Not a real recipe! Don't try this at home. Or anywhere else. 🤢
+        garnishes: [lime_wedge.name]
+      }
+      cocktail = Cocktail.import_from_hash(hsh)
+      assert_equal hsh[:name], cocktail.name, "Should have the right name"
+      assert_equal hsh[:notes], cocktail.notes, "Should have the right notes"
+      assert_equal hsh[:technique], cocktail.technique, "Should have the right name"
+      assert_equal hsh[:recipe_items_blob], cocktail.recipe_items_blob, "Should have the right recipe items"
+      assert_same_elements [gin, bourbon], cocktail.ingredients, "Should have used the existing ingredient records"
+      assert_same_elements [lime_wedge], cocktail.garnishes, "Should have the right garnishes"
+    end
+  end
 end

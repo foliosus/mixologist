@@ -70,8 +70,8 @@ class RecipeItem < ActiveRecord::Base
   def to_hash
     {
       amount: amount,
-      unit: unit.to_json,
-      ingredient: ingredient.to_json
+      unit: unit.name,
+      ingredient: ingredient.name
     }
   end
 

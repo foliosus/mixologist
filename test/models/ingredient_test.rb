@@ -47,4 +47,31 @@ class IngredientTest < ActiveSupport::TestCase
     end
   end
 
+  context "import/export" do
+    setup do
+      @base_spirit = create(:ingredient_category, :base_spirit)
+    end
+
+    should "serialize to hash" do
+      ingredient = build(:ingredient, ingredient_category: @base_spirit)
+      expected = {
+        name: ingredient.name,
+        notes: ingredient.notes,
+        ingredient_category: @base_spirit.name
+      }
+      assert_equal expected, ingredient.to_hash
+    end
+
+    should "import from hash" do
+      hsh = {
+        name: "allspice dram",
+        notes: "so strong",
+        ingredient_category: @base_spirit.name
+      }
+      ingredient = Ingredient.import_from_hash(hsh)
+      assert_equal hsh[:name], ingredient.name, "Should have the right name"
+      assert_equal hsh[:notes], ingredient.notes, "Should have the right notes"
+      assert_equal @base_spirit, ingredient.ingredient_category, "Should have the right category"
+    end
+  end
 end

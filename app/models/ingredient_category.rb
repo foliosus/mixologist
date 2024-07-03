@@ -28,6 +28,16 @@ class IngredientCategory < ActiveRecord::Base
     end
   end
 
+  # =============
+  # Import/export
+  # =============
+
+  def self.import_from_hash(hsh)
+    ingredient_category = find_or_initialize_by(hsh.slice(:name))
+    ingredient_category.update(hsh)
+    ingredient_category
+  end
+
   def to_hash
     {
       name: name

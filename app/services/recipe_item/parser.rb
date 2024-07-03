@@ -32,11 +32,10 @@ class RecipeItem::Parser
   end
 
   private def string_to_number(str)
-    number = if str.include?('/')
-      Rational(str).to_f
+    if str.include?('/')
+      Rational(str)
     else
-      str.to_f
-    end
-    number.round(2)
+      str
+    end.to_f.round(2)
   end
 end

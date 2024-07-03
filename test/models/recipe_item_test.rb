@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class RecipeItemTest < ActiveSupport::TestCase
-  should belong_to(:cocktail)
-  should belong_to(:ingredient)
-  should belong_to(:unit).optional
+  should belong_to(:cocktail).inverse_of(:recipe_items)
+  should belong_to(:ingredient).inverse_of(:recipe_items)
+  should belong_to(:unit).optional.inverse_of(:recipe_items)
 
   should "have a summary" do
     ri = build(:recipe_item, amount: 1)
@@ -129,5 +129,33 @@ class RecipeItemTest < ActiveSupport::TestCase
     ri = RecipeItem.parse_from_string('1 oz apple cider')
     assert ri.is_a?(RecipeItem), "Should be a RecipeItem, not #{ri.class}"
     assert ri.ingredient.present?, "Should have one ingredient"
+  end
+
+  context "import/export" do
+    setup do
+      @unit = create(:unit)
+      @ingredient = create(:ingredient, ingredient_category: create(:ingredient_category))
+    end
+
+    should "serialize to hash" do
+      recipe_item = build(:recipe_item, unit: @unit, ingredient: @ingredient)
+      expected = {
+        amount: recipe_item.amount,
+        unit: @unit.name,
+        ingredient: @ingredient.name
+      }
+      assert_equal expected, recipe_item.to_hash
+    end
+
+    should "not import from hash, because we import the recipe_item_blob" do
+      hsh = {
+        amount: 1,
+        unit: @unit.name,
+        ingredient: @ingredient.name
+      }
+      assert_raises NoMethodError do
+        recipe_item = RecipeItem.import_from_hash(hsh)
+      end
+    end
   end
 end

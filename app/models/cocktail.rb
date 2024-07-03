@@ -117,17 +117,27 @@ class Cocktail < ActiveRecord::Base
     end
   end
 
-  # ===========
-  # JSON export
-  # ===========
+  # =============
+  # Import/export
+  # =============
+
+  def self.import_from_hash(hsh)
+    cocktail = find_or_initialize_by(hsh.slice(:name))
+    garnish_names = hsh.delete(:garnishes)
+    if garnish_names.present?
+      cocktail.garnishes = Garnish.where(name: garnish_names).all
+    end
+    cocktail.update(hsh)
+    cocktail
+  end
 
   def to_hash
     {
       name: name,
-      notes: notes,
+      notes: notes.present? ? notes : nil,
       technique: technique,
-      recipe_items: recipe_items.collect(&:to_json),
-      garnishes: garnishes.collect(&:to_json)
+      recipe_items_blob: recipe_items_blob,
+      garnishes: garnishes.collect(&:name)
     }
   end
 end

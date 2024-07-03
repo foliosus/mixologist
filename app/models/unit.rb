@@ -19,6 +19,16 @@ class Unit < ActiveRecord::Base
     amount == 1 ? abbreviation : abbreviation.pluralize
   end
 
+  # =============
+  # Import/export
+  # =============
+
+  def self.import_from_hash(hsh)
+    unit = find_or_initialize_by(hsh.slice(:name))
+    unit.update(hsh)
+    unit
+  end
+
   def to_hash
     {
       name: name,

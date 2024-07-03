@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class IngredientCategoryTest < ActiveSupport::TestCase
-  should have_many(:ingredients)
+  should have_many(:ingredients).inverse_of(:ingredient_category)
   should have_many(:cocktails).through(:ingredients)
 
   should validate_presence_of(:name)
@@ -39,4 +39,21 @@ class IngredientCategoryTest < ActiveSupport::TestCase
     end
   end
 
+  context "import/export" do
+    should "serialize to hash" do
+      ingredient_category = build(:ingredient_category)
+      expected = {
+        name: ingredient_category.name
+      }
+      assert_equal expected, ingredient_category.to_hash
+    end
+
+    should "import from hash" do
+      hsh = {
+        name: "sauce",
+      }
+      ingredient_category = IngredientCategory.import_from_hash(hsh)
+      assert_equal hsh[:name], ingredient_category.name, "Should have the right name"
+    end
+  end
 end
