@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To get up and running, assuming you've got the correct Ruby installed (see the `.ruby-version` file), and a valid `database.yml`, should be as simple as `bundle install && rails db:setup`.
 
-Things you may want to cover:
+To run the test suite, `rails test` is your friend.
 
-* Ruby version
+The site doesn't have any serious complications; there is no email, no background tier, and no other dependencies like a search service.
 
-* System dependencies
+## Hosting
 
-* Configuration
+The app is hosted by Heroku and served from [www.mixologi.st](https://www.mixologi.st).
 
-* Database creation
+## DNS
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The domain is registered with [nic.st](https://nic.st/).
