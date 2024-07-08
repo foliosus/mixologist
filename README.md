@@ -8,8 +8,8 @@ The site doesn't have any serious complications; there is no email, no backgroun
 
 ## Hosting
 
-The app is hosted by Heroku and served from [www.mixologi.st](https://www.mixologi.st).
+The app is hosted by Heroku and served from [drinks.mixologi.st](https://drinks.mixologi.st).
 
 ## DNS
 
-The domain is registered with [nic.st](https://nic.st/).
+The domain is registered with [nic.st](https://nic.st/). [CloudFlare](https://dash.cloudflare.com) lives in front of the app, and provides both the name servers and the DNS service since it does a much better job than nic.st.
