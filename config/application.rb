@@ -36,6 +36,6 @@ module Mixologist
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.action_cable.allowed_request_origins = ['https://www.mixologi.st']
+    config.action_cable.allowed_request_origins = ['https://drinks.mixologi.st']
   end
 end
