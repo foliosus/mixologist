@@ -3,4 +3,3 @@ default: &default
 
 test:
     adapter: test
-
