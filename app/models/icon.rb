@@ -1,10 +1,12 @@
 class Icon
   ALLOWED_STYLES = %i[solid regular]
 
+  BRAND_ICONS = %i[github linkedin]
+
   def initialize(icon_name, style: :solid)
     @icon_name = icon_name
-    @style = style.to_sym
-    raise ArgumentError, "Style must be either 'solid' or 'thin' but was given as #{style.inspect}" unless @style.in?(ALLOWED_STYLES)
+    @style = icon_name.to_sym.in?(BRAND_ICONS) ? :brands : style.to_sym
+    raise ArgumentError, "Style must be one of #{ALLOWED_STYLES} but was given as #{style.inspect}" unless @style.in?(ALLOWED_STYLES) || @style == :brands
   end
 
   def to_html
@@ -27,4 +29,3 @@ class Icon
     end
   end
 end
-
