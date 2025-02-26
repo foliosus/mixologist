@@ -1,3 +1,6 @@
+@use "colors";
+@use "functions";
+
 // ===================
 // Font family, colors
 // ===================
@@ -6,8 +9,8 @@ body {
   font-family: 'Alice', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: $body_text_color;
-  @include set_font_size(0);
+  color: colors.$body_text_color;
+  @include functions.set_font_size(0);
 }
 
 // ===============
@@ -24,24 +27,24 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  @include set_font_size(3);
-  margin-bottom: $base-line-height;
+  @include functions.set_font_size(3);
+  margin-bottom: functions.$base-line-height;
 }
 
 h2 {
-  @include set_font_size(2);
+  @include functions.set_font_size(2);
 }
 
 h3 {
-  @include set_font_size(1);
+  @include functions.set_font_size(1);
 }
 
 h4 {
-  @include set_font_size(0);
+  @include functions.set_font_size(0);
 }
 
 table, p, ul, ol, pre, blockquote {
-  margin-bottom: $base-line-height;
+  margin-bottom: functions.$base-line-height;
 }
 
 
@@ -55,10 +58,10 @@ a {
   text-underline-offset: 2px;
 
   &:link, &:visited {
-    color: $link_color;
+    color: colors.$link_color;
   }
 
   &:hover {
-    color: $hover_link_color;
+    color: colors.$hover_link_color;
   }
 }

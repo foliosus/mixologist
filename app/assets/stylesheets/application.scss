@@ -1,40 +1,37 @@
 @charset 'UTF-8';
-@import 'colors';
-@import 'functions';
+@use 'colors';
+@use 'functions';
 
-@import 'reset';
+@use 'reset';
 
 // ==============================
 // Establish typographical system
 // ==============================
 
-$base-font-size: 16px;
-$base-line-height: 20px;
-
-@import 'typography';
+@use 'typography';
 
 
 // ==============
 // Site structure
 // ==============
 
-@import 'footer';
-@import 'layout';
-@import 'navigation';
+@use 'footer';
+@use 'layout';
+@use 'navigation';
 
 
 // ===============
 // Use simple_form
 // ===============
 
-@import 'simple_form';
+@use 'simple_form';
 
 
 // =======
 // Widgets
 // =======
 
-@import 'widgets/call_to_action';
-@import 'widgets/cocktails';
-@import 'widgets/flash_message';
-@import 'widgets/table';
+@use 'widgets/call_to_action';
+@use 'widgets/cocktails';
+@use 'widgets/flash_message';
+@use 'widgets/table';

@@ -1,3 +1,6 @@
+@use "../colors";
+@use "../functions";
+
 // ===========
 // Data tables
 // ===========
@@ -6,7 +9,7 @@ table {
   width: 100%;
 
   th, td {
-    padding: $base-line-height * 0.5 0.25em;
+    padding: functions.$base-line-height * 0.5 0.25em;
 
     p:last-child {
       margin-bottom: 0;
@@ -19,14 +22,14 @@ table {
 
   thead {
     tr {
-      background-color: $secondary_color;
+      background-color: colors.$secondary_color;
       color: #fff;
-      border-bottom: 1px solid $link_color;
+      border-bottom: 1px solid colors.$link_color;
     }
   }
   tbody {
     tr:nth-child(2n) {
-      background-color: $table_stripe_color;
+      background-color: colors.$table_stripe_color;
     }
   }
 

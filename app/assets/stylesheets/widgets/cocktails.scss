@@ -1,3 +1,6 @@
+@use "../colors";
+@use "../functions";
+
 // =========
 // Cocktails
 // =========
@@ -5,7 +8,7 @@
 .cocktails { // main grid container
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $base_line_height;
+  gap: functions.$base_line_height;
 
   cocktail { // grid-item
     display: grid;
@@ -13,13 +16,13 @@
     grid-template-columns: 100%;
     grid-auto-rows: auto;
     grid-template-rows: subgrid;
-    border: 1px solid $hairline_color;
+    border: 1px solid colors.$hairline_color;
     border-radius: 3px;
     padding: 1rem;
-    row-gap: $base_line_height;
+    row-gap: functions.$base_line_height;
 
     h2 {
-      @include set_font_size(1);
+      @include functions.set_font_size(1);
       grid-row: 1 / 1;
 
       a {

@@ -1,6 +1,9 @@
 // Modular scale defined here: http://modularscale.com/scale/?px1=18&px2=22&ra1=1.618&ra2=0
 // Critical values are 18px and 22px, using a golden ratio for scaling
 
+$base-font-size: 16px;
+$base-line-height: 20px;
+
 @function font_size($level: 0) {
   @if $level == -2 {
     @return 11px;

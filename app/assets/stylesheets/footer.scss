@@ -1,8 +1,12 @@
+@use "sass:color";
+@use "colors";
+@use "functions";
+
 #sitewide_footer {
-  margin-top: $base_line_height * 2;
+  margin-top: functions.$base_line_height * 2;
 
   p {
-    @include set_font_size(-1);
-    color: scale-color($body_text_color, $whiteness: 50%);
+    @include functions.set_font_size(-1);
+    color: color.scale(colors.$body_text_color, $whiteness: 50%);
   }
 }

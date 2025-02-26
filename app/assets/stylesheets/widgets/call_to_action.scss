@@ -1,15 +1,18 @@
+@use "../colors";
+@use "../functions";
+
 $button_gutter_width: 1rem;
 
 a.call_to_action {
   display: block;
-  padding: calc(#{$base_line_height * 0.5} - 2px) $button_gutter_width;
+  padding: calc(#{functions.$base_line_height * 0.5} - 2px) $button_gutter_width;
   text-decoration: none;
   border-radius: 5px;
 
   font-family: "Limelight", "Helvetica", sans-serif;
-  @include set_font_size(1);
+  @include functions.set_font_size(1);
   text-align: center;
 
-  background-color: $link_color;
+  background-color: colors.$link_color;
   color: #fff;
 }

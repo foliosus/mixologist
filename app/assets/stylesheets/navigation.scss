@@ -1,6 +1,9 @@
+@use "colors";
+@use "functions";
+
 #sitewide_navigation {
-  margin-top: $base_line_height * 0.5;
-  margin-bottom: $base_line_height * 0.5;
+  margin-top: functions.$base_line_height * 0.5;
+  margin-bottom: functions.$base_line_height * 0.5;
 
   display: flex;
   flex-flow: row nowrap;
@@ -8,7 +11,7 @@
   gap: 1rem;
 
   nav {
-    padding-top: $base_line_height * 2;
+    padding-top: functions.$base_line_height * 2;
   }
 
   ul {
@@ -26,11 +29,11 @@
 
     a {
       display: block;
-      padding: $base_line_height * 0.5 2rem;
+      padding: functions.$base_line_height * 0.5 2rem;
       text-decoration: none;
 
       &:hover {
-        background-color: $link_color;
+        background-color: colors.$link_color;
         color: #fff;
       }
     }
@@ -44,5 +47,4 @@
       }
     }
   }
-
 }

@@ -1,29 +1,31 @@
+@use "../colors";
+@use "../functions";
+
 // ==============
 // Flash message
 // ==============
 
 #flash_messages div {
-  padding: $base_line_height 1em;
-  margin-bottom: $base_line_height;
+  padding: functions.$base_line_height 1em;
+  margin-bottom: functions.$base_line_height;
   text-align: center;
 
   &.notice {
-    color: $flash_notice_color;
-    background-color: $flash_notice_background_color;
+    color: colors.$flash_notice_color;
+    background-color: colors.$flash_notice_background_color;
   }
 
   &.info {
-    color: $flash_info_color;
-    background-color: $flash_info_background_color;
+    color: colors.$flash_info_color;
+    background-color: colors.$flash_info_background_color;
   }
 
   &.alert {
-    color: $flash_alert_color;
-    background-color: $flash_alert_background_color;
+    color: colors.$flash_alert_color;
+    background-color: colors.$flash_alert_background_color;
   }
 
   & + div {
-    margin-top: $base_line_height * -1;
+    margin-top: functions.$base_line_height * -1;
   }
 }
-

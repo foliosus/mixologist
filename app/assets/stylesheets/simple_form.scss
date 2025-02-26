@@ -1,14 +1,17 @@
+@use "colors";
+@use "functions";
+
 form.simple_form {
   fieldset {
     border: 1px solid #eee;
     border-radius: 3px;
-    margin-bottom: $base-line-height;
+    margin-bottom: functions.$base-line-height;
 
     legend {
       margin-left: -0.5rem;
       padding: 0 0.5rem;
       position: relative;
-      @include set_font_size(1);
+      @include functions.set_font_size(1);
     }
   }
 
@@ -22,14 +25,14 @@ form.simple_form {
       "label input"
       "label errors"
     ;
-    margin-bottom: $base-line-height;
+    margin-bottom: functions.$base-line-height;
 
     label {
       grid-area: label;
       position: relative;
 
       abbr {
-        color: $primary_color;
+        color: colors.$primary_color;
         text-decoration: none;
         position: absolute;
         left: -0.75rem;
@@ -38,21 +41,21 @@ form.simple_form {
 
     input, select {
       grid-area: input;
-      padding: $base-line-height * 0.5 0.5rem;
+      padding: functions.$base-line-height * 0.5 0.5rem;
     }
 
     input, select, textarea {
-      outline-color: $quinary_color;
+      outline-color: colors.$quinary_color;
     }
 
     span.error {
       grid-area: errors;
-      color: $primary_color;
+      color: colors.$primary_color;
     }
 
     &.field_with_errors {
       input, select, textarea {
-        border-color: $primary_color;
+        border-color: colors.$primary_color;
       }
     }
 
@@ -87,24 +90,24 @@ form.simple_form {
 
       &::after, textarea {
         font: inherit;
-        padding: $base-line-height * 0.5 0.5rem;
+        padding: functions.$base-line-height * 0.5 0.5rem;
         grid-area: 1 / 1 / 2 / 2;
       }
     }
 
     input, select, textarea {
       border-radius: 3px;
-      border: 1px solid $hairline_color;
+      border: 1px solid colors.$hairline_color;
     }
   }
 
   button, input.button, input[type=submit] {
     color: #fff;
-    background-color: $link_color;
+    background-color: colors.$link_color;
     border: none;
     border-radius: 3px;
 
-    padding: calc(#{$base_line_height * 0.5} - 2px) 1rem;
+    padding: calc(#{functions.$base_line_height * 0.5} - 2px) 1rem;
     text-decoration: none;
   }
 }

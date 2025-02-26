@@ -1,3 +1,4 @@
+@use "sass:color";
 @charset 'UTF-8';
 
 // Color palette: https://coolors.co/a42b3b-210b2c-f8f3f9-3c91e6-a2d729
@@ -19,7 +20,7 @@ $flash_notice_color: $body_text_color;
 $flash_notice_background_color: $quaternary_color;
 
 $flash_info_color: $body_text_color;
-$flash_info_background_color: scale-color($quinary_color, $lightness: 50%);
+$flash_info_background_color: color.scale($quinary_color, $lightness: 50%);
 
 $flash_alert_color: $body_text_color;
-$flash_alert_background_color: scale-color($primary_color, $lightness: 70%);
+$flash_alert_background_color: color.scale($primary_color, $lightness: 70%);

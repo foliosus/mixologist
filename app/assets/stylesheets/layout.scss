@@ -1,3 +1,5 @@
+@use "functions";
+
 body {
   --body-gutter-width: 2rem;
   padding-left: var(--body-gutter-width);
@@ -20,7 +22,7 @@ body {
     "footer footer footer"
   ;
   column-gap: 2rem;
-  row-gap: $base_line_height;
+  row-gap: functions.$base_line_height;
 
   #sitewide_navigation {
     grid-area: sitewide_navigation;
